@@ -29,11 +29,11 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
-        if x < 0:
-            return False
-        if x % 10 == 0:
-            return False
-        return True if str(x)[::-1] == str(x) else False
+        # if x < 0:
+        #     return False
+        # if x % 10 == 0:
+        #     return False
+        # return True if str(x)[::-1] == str(x) else False
         # ************************************
         # tmp1 = str(x)
         # tmp2 = tmp1[::-1]
@@ -43,6 +43,8 @@ class Solution(object):
         #     return True
         # else:
         #     return False
+
+        pass
 
 
 if __name__ == '__main__':

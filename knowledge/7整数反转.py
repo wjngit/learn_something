@@ -28,16 +28,18 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        if -10 < x < 10:
-            return x
-        str_x = str(x)
-        if str_x[0] == '-':
-            new_str_x = str_x[:0:-1]
-            ret = -int(new_str_x)
-        else:
-            new_str_x = str_x[::-1]
-            ret = int(new_str_x)
-        return ret if -2147483648 <= ret < 2147483648 else 0
+        # if -10 < x < 10:
+        #     return x
+        # str_x = str(x)
+        # if str_x[0] == '-':
+        #     new_str_x = str_x[:0:-1]
+        #     ret = -int(new_str_x)
+        # else:
+        #     new_str_x = str_x[::-1]
+        #     ret = int(new_str_x)
+        # return ret if -2147483648 <= ret < 2147483648 else 0
+
+        pass
 
 
 if __name__ == '__main__':
