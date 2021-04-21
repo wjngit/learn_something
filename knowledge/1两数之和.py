@@ -26,15 +26,13 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        # ret_dict = {}
-        # for i, num in enumerate(nums):
-        #     tmp = target - num
-        #     if tmp in ret_dict:
-        #         return [ret_dict[tmp], i]
-        #     ret_dict[num] = i
-        # return []
-
-        pass
+        ret_dict = {}
+        for i, num in enumerate(nums):
+            tmp = target - num
+            if tmp in ret_dict:
+                return [ret_dict[tmp], i]
+            ret_dict[num] = i
+        return []
 
 
 if __name__ == '__main__':

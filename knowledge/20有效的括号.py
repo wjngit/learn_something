@@ -33,25 +33,18 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        # if len(s) % 2 == 1:
-        #     return False
-        #
-        # pairs = {
-        #     ")": "(",
-        #     "]": "[",
-        #     "}": "{",
-        # }
-        # stack = list()
-        # for ch in s:
-        #     if ch in pairs:
-        #         if not stack or stack[-1] != pairs[ch]:
-        #             return False
-        #         stack.pop()
-        #     else:
-        #         stack.append(ch)
-        #
-        # return not stack
-        pass
+        if len(s) % 2 != 0:
+            return False
+        tmp_dict = {")": "(", "]": "[", "}": "{"}
+        stack = list()
+        for x in s:
+            if x in tmp_dict:
+                if not stack or stack[-1] != tmp_dict[x]:
+                    return False
+                stack.pop()
+            else:
+                stack.append(x)
+        return not stack
 
 
 if __name__ == '__main__':

@@ -47,17 +47,15 @@ class Solution(object):
         :rtype: int
         """
         num_dict = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
-        # num = 0
-        # for i in range(len(s) - 1):
-        #     tmp = s[i]
-        #     if num_dict[tmp] >= num_dict[s[i + 1]]:
-        #         num += num_dict[tmp]
-        #     else:
-        #         num -= num_dict[tmp]
-        # num += num_dict[s[-1]]
-        # return num
-
-        pass
+        num = 0
+        for i in range(len(s) - 1):
+            tmp = s[i]
+            if num_dict[tmp] >= num_dict[s[i + 1]]:
+                num += num_dict[tmp]
+            else:
+                num -= num_dict[tmp]
+        num += num_dict[s[-1]]
+        return num
 
 
 if __name__ == '__main__':

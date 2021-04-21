@@ -20,23 +20,22 @@ class Solution(object):
         :type strs: List[str]
         :rtype: str
         """
-        # if not strs:
-        #     return ''
-        # first = strs[0]
-        # length, count = len(first), len(strs)
-        # for i in range(length):
-        #     target = first[i]
-        #     judge_list = []
-        #     for j in range(1, count):
-        #         _next = strs[j]
-        #         if len(_next) == i:
-        #             judge_list.append(True)
-        #             break
-        #         judge_list.append(_next[i] != target)
-        #     if any(judge_list):
-        #         return first[:i]
-        # return first
-        pass
+        if not strs:
+            return ''
+        first = strs[0]
+        length, count = len(first), len(strs)
+        for i in range(length):
+            target = first[i]
+            judge_list = []
+            for j in range(1, count):
+                _next = strs[j]
+                if len(_next) == i:
+                    judge_list.append(True)
+                    break
+                judge_list.append(_next[i] != target)
+            if any(judge_list):
+                return first[:i]
+        return first
 
 
 if __name__ == '__main__':
