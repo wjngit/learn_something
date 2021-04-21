@@ -34,8 +34,25 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        pass
+        if not nums:
+            return 0
+
+        n = len(nums)
+        fast = slow = 1
+        while fast < n:
+            if nums[fast] != nums[fast - 1]:
+                nums[slow] = nums[fast]
+                slow += 1
+            fast += 1
+
+        return slow
 
 
 if __name__ == '__main__':
-    pass
+    nums1 = [1, 1, 2]
+    nums2 = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+    s = Solution()
+    ret1 = s.removeDuplicates(nums1)
+    ret2 = s.removeDuplicates(nums2)
+    print(ret1)
+    print(ret2)
