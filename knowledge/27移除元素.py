@@ -37,14 +37,23 @@ class Solution(object):
         :type val: int
         :rtype: int
         """
-        left_p = 0
-        for i, right_val in enumerate(nums):
-            if right_val != val:
-                nums[left_p] = right_val
-                left_p += 1
+        # num = 0
+        # for i, curr_val in enumerate(nums):
+        #     if curr_val != val:
+        #         num += 1
+        #     else:
+        #         nums[i] = 0
+        # nums.sort(reverse=True)
+        # return num
 
-        return left_p
+        pass
 
 
 if __name__ == '__main__':
-    pass
+    nums1, val1 = [3, 2, 2, 3], 3
+    nums2, val2 = [0, 1, 2, 2, 3, 0, 4, 2], 2
+    s = Solution()
+    ret1 = s.removeElement(nums1, val1)
+    ret2 = s.removeElement(nums2, val2)
+    print(ret1)
+    print(ret2)

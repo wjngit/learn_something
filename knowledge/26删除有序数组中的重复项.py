@@ -36,7 +36,6 @@ class Solution(object):
         """
         if not nums:
             return 0
-
         n = len(nums)
         fast = slow = 1
         while fast < n:
@@ -44,7 +43,7 @@ class Solution(object):
                 nums[slow] = nums[fast]
                 slow += 1
             fast += 1
-
+        # print(nums)
         return slow
 
 
