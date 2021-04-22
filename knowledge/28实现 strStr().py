@@ -28,8 +28,48 @@ class Solution(object):
         :type needle: str
         :rtype: int
         """
+        if needle == "" or needle == haystack:
+            return 0
+        elif len(needle) > len(haystack):
+            return -1
+        else:
+            for i in range(len(haystack)):
+                if haystack[i] == needle[0]:
+                    n = len(needle)
+                    if haystack[i:i + n] == needle:
+                        return i
+            return -1
+        # # **************************************
+        # if haystack and needle:
+        #     if needle in haystack:
+        #         return haystack.index(needle)
+        #     else:
+        #         return -1
+        # else:
+        #     if any((haystack, needle)):
+        #         return 0 if haystack else -1
+        #     else:
+        #         return 0
         pass
 
 
 if __name__ == '__main__':
-    pass
+    haystack1, needle1 = 'hello', 'll'
+    haystack2, needle2 = 'aaaaa', 'bba'
+    haystack3, needle3 = 'abc', 'c'
+    haystack4, needle4 = '', 'c'
+    haystack5, needle5 = '', ''
+    s = Solution()
+    ret1 = s.strStr(haystack1, needle1)
+    ret2 = s.strStr(haystack2, needle2)
+    ret3 = s.strStr(haystack3, needle3)
+    ret4 = s.strStr(haystack4, needle4)
+    ret5 = s.strStr(haystack5, needle5)
+    print(ret1)
+    print(ret2)
+    print(ret3)
+    print(ret4)
+    print(ret5)
+        # a = 'abc'
+        # b = a[2:3]
+        # print(b)
