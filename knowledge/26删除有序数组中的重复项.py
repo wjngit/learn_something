@@ -34,17 +34,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        if not nums:
-            return 0
-        n = len(nums)
-        fast = slow = 1
-        while fast < n:
-            if nums[fast] != nums[fast - 1]:
-                nums[slow] = nums[fast]
-                slow += 1
-            fast += 1
-        # print(nums)
-        return slow
+        # if not nums:
+        #     return 0
+        # fast = slow = 1
+        # while fast < len(nums):
+        #     if nums[fast] != nums[fast - 1]:
+        #         nums[slow] = nums[fast]
+        #         slow += 1
+        #     fast += 1
+        # # print(nums)
+        # return slow
+
+        pass
 
 
 if __name__ == '__main__':
