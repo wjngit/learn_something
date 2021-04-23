@@ -1,11 +1,3 @@
-#
-# 1) Insertion, deletion and random access of array
-# 2) Assumes int for element type
-#
-# Author: Wenru
-#
-
-
 class MyArray:
     """A simple wrapper around List.
     You cannot have -1 in the array.
@@ -15,11 +7,11 @@ class MyArray:
         self._data = []
         self._capacity = capacity
 
-    def __getitem__(self, position: int) -> object:
-        return self._data[position]
-
-    def __setitem__(self, index: int, value: object):
-        self._data[index] = value
+    # def __getitem__(self, position: int) -> object:
+    #     return self._data[position]
+    #
+    # def __setitem__(self, index: int, value: object):
+    #     self._data[index] = value
 
     def __len__(self) -> int:
         return len(self._data)
@@ -45,7 +37,7 @@ class MyArray:
         if len(self) >= self._capacity:
             return False
         else:
-            return self._data.insert(index, value)
+            return self._data.insert(index, value) is None
 
     def print_all(self):
         for item in self:
@@ -63,6 +55,7 @@ def test_myarray():
     assert len(array) == 5
     assert array.find(1) == 5
     assert array.delete(4) is True
+    array.insert(3, 9)
     array.print_all()
 
 
