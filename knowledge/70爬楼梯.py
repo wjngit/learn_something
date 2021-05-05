@@ -27,16 +27,16 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        if n <= 2:
-            return n
-        i, j, k = 1, 2, 3
-        ret_sum = 0
-        while k <= n:
-            ret_sum = i + j
-            i = j
-            j = ret_sum
-            k += 1
-        return ret_sum
+        # if n <= 2:
+        #     return n
+        # i, j, k = 1, 2, 3
+        # ret_sum = 0
+        # while k <= n:
+        #     ret_sum = i + j
+        #     i = j
+        #     j = ret_sum
+        #     k += 1
+        # return ret_sum
 
         pass
 
