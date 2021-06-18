@@ -1,4 +1,3 @@
-#希尔排序
 def shell_sort(li):
 
     n=len(li)

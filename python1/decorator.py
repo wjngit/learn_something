@@ -54,3 +54,19 @@ def greet(message):
 
 
 greet(666)
+
+
+def a(func):
+    def b(*args, **kwargs):
+        print(123)
+        func(*args, **kwargs)
+
+    return b
+
+
+@a
+def aaa(a=1, b=2):
+    print(f'{a}-{b}')
+
+
+aaa(3, 4)
