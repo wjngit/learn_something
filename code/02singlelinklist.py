@@ -28,7 +28,7 @@ class SingleLinkList(object):
     def travel(self):
         cur = self.__head
         while cur is not None:
-            # print(cur.data, end=' ')
+            print(cur.data, end=' ')
             cur = cur.next_link
 
     # print('')

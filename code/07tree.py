@@ -1,71 +1,85 @@
-class Node():
-    def __init__(self,data):
-        self.data=data
-        self.lchild=None
-        self.rchild=None
+class Node(object):
+    def __init__(self, data):
+        self.data = data
+        self.l_child = None
+        self.r_child = None
 
-class Tree():
 
+class Tree(object):
     def __init__(self):
-        self.root=None
+        self.root = None
 
-    def add(self,data):
-        node=Node(data)
+    def add(self, data):
+        node = Node(data)
 
-        if self.root==None:
-            self.root=node
-
+        if self.root is None:
+            self.root = node
         else:
-            queue=[]
-            queue.append(self.root)
+            queue = [self.root]
             while queue:
-                n=queue.pop(0)
-                if n.lchild==None:
-                    n.lchild=node
+                n = queue.pop(0)
+                if n.l_child is None:
+                    n.l_child = node
                     return
-                elif n.rchild==None:
-                    n.rchild=node
+                elif n.r_child is None:
+                    n.r_child = node
                     return
                 else:
-                    queue.append(n.lchild)
-                    queue.append(n.rchild)
+                    queue.append(n.l_child)
+                    queue.append(n.r_child)
 
-    def travle(self):
-        if self.root==None:
-            print('')
+    def travel(self):
+        if self.root is None:
             return
         else:
-            queue=[]
-            queue.append(self.root)
+            queue = [self.root]
             while queue:
-                n=queue.pop(0)
-                print(n.data,end=' ')
+                n = queue.pop(0)
+                print(n.data, end=' ')
+                if n.l_child:
+                    queue.append(n.l_child)
+                if n.r_child:
+                    queue.append(n.r_child)
 
-                if n.lchild:
-                    queue.append(n.lchild)
-                if n.rchild:
-                    queue.append(n.rchild)
-
-        print('')
-    def preorder(self,root):
-        if root==None:
+    def travel1(self):
+        if self.root is None:
             return
-        print(root.data,end=' ')
-        self.preorder(root.lchild)
-        self.preorder(root.rchild)
+        q = [self.root]
+        while q:
+            n = q.pop(0)
+            print(n.data, end=' ')
+            if n.l_child:
+                q.append(n.l_child)
+            if n.r_child:
+                q.append(n.r_child)
 
-    def inorder(self,root):
-        if root==None:
+    def pre_order(self, node):
+        if node is None:
             return
+        self.pre_order(node.l_child)
+        self.pre_order(node.r_child)
+        print(node.data, end=' ')
 
-        self.inorder(root.lchild)
+    def preorder(self, root):
+        if root is None:
+            return
         print(root.data, end=' ')
-        self.inorder(root.rchild)
+        self.preorder(root.l_child)
+        self.preorder(root.r_child)
+
+    def inorder(self, root):
+        if root is None:
+            return
+        self.inorder(root.l_child)
+        print(root.data, end=' ')
+        self.inorder(root.r_child)
 
 
-t=Tree()
-for i in range(10):
-    t.add(i)
-t.travle()
-# t.preorder(t.root)
-t.inorder(t.root)
+if __name__ == '__main__':
+    t = Tree()
+    for i in range(10):
+        t.add(i)
+    # t.travel1()
+    t.pre_order(t.root)
+    print('\n')
+    t.inorder(t.root)
