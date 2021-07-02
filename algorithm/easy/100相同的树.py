@@ -18,11 +18,13 @@
 
 
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode(object):
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
 class Solution(object):
     def isSameTree(self, p, q):
         """
@@ -33,5 +35,17 @@ class Solution(object):
         pass
 
 
+def create_tree(data_list):
+    for
+    pass
+
+
+def travel_tree():
+    pass
+
+
 if __name__ == '__main__':
+    p1, q1 = [1, 2, 3], [1, 2, 3]
+    p2, q2 = [1, 2], [1, None, 2]
+    p3, q3 = [1, 2, 1], [1, 1, 2]
     pass
