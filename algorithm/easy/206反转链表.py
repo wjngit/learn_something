@@ -38,42 +38,41 @@ class Solution(object):
         return prev
 
 
+def create_single_link_list(data_list):
+    _head, _next = None, None
+    for data in data_list:
+        n = ListNode(data)
+        if _head is None:
+            _next = n
+            _head = n
+        else:
+            _next.next = n
+            _next = n
+    return _head
+
+
+def travel(_head):
+    if _head is None:
+        return
+    while _head:
+        yield _head.val
+        _head = _head.next
+
+
 if __name__ == '__main__':
-    head1 = [1, 2, 3, 4, 5]
-    head2 = [1, 2]
-    head3 = []
-
-
-    def create_link_list(data_list):
-        _head, _next = None, None
-        for data in data_list:
-            n = ListNode(data)
-            if _head is None:
-                _next = n
-                _head = n
-            else:
-                _next.next = n
-                _next = n
-        return _head
-
-
-    head1 = create_link_list(head1)
-    head2 = create_link_list(head2)
-    head3 = create_link_list(head3)
+    _head1 = [1, 2, 3, 4, 5]
+    _head2 = [1, 2]
+    _head3 = []
+    head1 = create_single_link_list(_head1)
+    head2 = create_single_link_list(_head2)
+    head3 = create_single_link_list(_head3)
     s = Solution()
     h1 = s.reverseList(head1)
-    while h1:
-        print(h1.val)
-        h1 = h1.next
-    print('*' * 20)
-
+    ret1 = [i for i in travel(h1)]
+    print(ret1)
     h2 = s.reverseList(head2)
-    while h2:
-        print(h2.val)
-        h2 = h2.next
-    print('*' * 20)
-
+    ret2 = [i for i in travel(h2)]
+    print(ret2)
     h3 = s.reverseList(head3)
-    while h3:
-        print(h3.val)
-        h3 = h3.next
+    ret3 = [i for i in travel(h3)]
+    print(ret3)

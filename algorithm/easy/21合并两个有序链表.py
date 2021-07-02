@@ -40,64 +40,56 @@ class Solution(object):
         # else:
         #     l2.next = self.mergeTwoLists(l1, l2.next)
         #     return l2
-        def initList(self, data):
-            # 判空
-            if len(data) == 0:
-                return
-            else:
-                # 创建头结点
-                self.head = ListNode(data[0])
-                r = self.head
-                p = self.head
-                # 逐个为 data 内的数据创建结点, 建立链表
-                for i in data[1:]:
-                    node = ListNode(i)
-                    p.next = node
-                    p = p.next
-                return r
+        if l1 is None:
+            return l2
+        elif l2 is None:
+            return l1
+        elif l1.val < l2.val:
+            l1.next = self.mergeTwoLists(l1.next, l2)
+            return l1
+        else:
+            l2.next = self.mergeTwoLists(l1, l2.next)
+            return l2
 
-        def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-            result_list = []
-            cur = l1
-            while cur is not None:
-                result_list.append(cur.val)
-                cur = cur.next
-            cur = l2
-            while cur is not None:
-                result_list.append(cur.val)
-                cur = cur.next
-            sorted_list = sorted(result_list)
-            if len(sorted_list) == 0:
-                return
-            else:
-                node = ListNode(sorted_list[0])
-                cur = node
-                for i in range(1, len(sorted_list)):
-                    cur.next = ListNode(sorted_list[i])
-                    cur = cur.next
-            # 显示结果用
-            cur = node
-            display = []
-            while cur is not None:
-                display.append(cur.val)
-                cur = cur.next
-            return display
+
+def create_single_link_list(data_list):
+    _head, _next = None, None
+    for data in data_list:
+        n = ListNode(val=data)
+        if _head is None:
+            _head = n
+            _next = n
+        else:
+            _next.next = n
+            _next = n
+    return _head
+
+
+def travel(_head):
+    if _head is None:
+        return
+    while _head:
+        yield _head.val
+        _head = _head.next
 
 
 if __name__ == '__main__':
-    node = ListNode()
-    a = node.val
-    b = node.next
-    print(a)
-    print(b)
-
     l11, l12 = [1, 2, 4], [1, 3, 4]
+    l11_h = create_single_link_list(l11)
+    l12_h = create_single_link_list(l12)
     l21, l22 = [], []
+    l21_h = create_single_link_list(l21)
+    l22_h = create_single_link_list(l22)
     l31, l32 = [], [0]
+    l31_h = create_single_link_list(l31)
+    l32_h = create_single_link_list(l32)
     s = Solution()
-    ret1 = s.mergeTwoLists(l11, l12)
-    ret2 = s.mergeTwoLists(l21, l22)
-    ret3 = s.mergeTwoLists(l31, l32)
-    print(ret1)
-    print(ret2)
-    print(ret3)
+    ret1 = s.mergeTwoLists(l11_h, l12_h)
+    ret2 = s.mergeTwoLists(l21_h, l22_h)
+    ret3 = s.mergeTwoLists(l31_h, l32_h)
+    merge1 = [i for i in travel(ret1)]
+    merge2 = [i for i in travel(ret2)]
+    merge3 = [i for i in travel(ret3)]
+    print(merge1)
+    print(merge2)
+    print(merge3)
