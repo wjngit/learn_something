@@ -67,9 +67,11 @@ def create_tree(data_list):
                 n = q.pop(0)
                 if n.left is None:
                     n.left = nn
+                    q = []
                     continue
                 if n.right is None:
                     n.right = nn
+                    q = []
                     continue
                 q.append(n.left)
                 q.append(n.right)
