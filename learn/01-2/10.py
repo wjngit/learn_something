@@ -48,7 +48,20 @@ class Solution:
 
         pass
 
-        
+        # m, n = len(matrix), len(matrix[0])
+        # i, j = 0, n - 1
+        # while i < m and j >= 0:
+        #     if matrix[i][j] == target:
+        #         return True
+        #     if matrix[i][j] > target:
+        #         j -= 1
+        #         continue
+        #     if matrix[i][j] < target:
+        #         i += 1
+        #         continue
+        # return False
+
+        pass
 
 
 if __name__ == '__main__':

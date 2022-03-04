@@ -35,6 +35,76 @@ class Solution:
 
         pass
 
+        # n = len(matrix)
+        # for i in range(n // 2):
+        #     for j in range(n):
+        #         tmp = matrix[i][j]
+        #         matrix[i][j] = matrix[n - i - 1][j]
+        #         matrix[n - i - 1][j] = tmp
+        # for i in range(1, n):
+        #     for j in range(i):
+        #         tmp = matrix[i][j]
+        #         matrix[i][j] = matrix[j][i]
+        #         matrix[j][i] = tmp
+
+        pass
+
+        # n = len(matrix)
+        # 上下翻转
+        # for i in range(n // 2):
+        #     for j in range(n):
+        #         temp = matrix[i][j]
+        #         matrix[i][j] = matrix[n - i - 1][j]
+        #         matrix[n - i - 1][j] = temp
+
+        # 左右翻转
+        # for i in range(n):
+        #     for j in range(i):
+        #         temp = matrix[i][j]
+        #         matrix[i][j] = matrix[j][i]
+        #         matrix[j][i] = temp
+
+        # 主对角线翻转
+        # for i in range(n):
+        #     for j in range(n // 2):
+        #         temp = matrix[i][j]
+        #         matrix[i][j] = matrix[i][n - j - 1]
+        #         matrix[i][n - j - 1] = temp
+
+        # 副对角线翻转
+        # for i in range(n):
+        #     for j in range(n - i):
+        #         temp = matrix[i][j]
+        #         matrix[i][j] = matrix[n - j - 1][n - i - 1]
+        #         matrix[n - j - 1][n - i - 1] = temp
+
+        pass
+
+        # n = len(matrix)
+        # s1_i, s1_j = 0, 0
+        # while n > 1:
+        #     s2_i, s2_j = s1_i, s1_j + n - 1
+        #     s3_i, s3_j = s1_i + n - 1, s1_j + n - 1
+        #     s4_i, s4_j = s1_i + n - 1, s1_j
+        #
+        #     for move in range(n - 1):
+        #         p1_i, p1_j = s1_i, s1_j + move
+        #         p2_i, p2_j = s2_i + move, s2_j
+        #         p3_i, p3_j = s3_i, s3_j - move
+        #         p4_i, p4_j = s4_i - move, s4_j
+        #
+        #         temp = matrix[p1_i][p1_j]
+        #         matrix[p1_i][p1_j] = matrix[p4_i][p4_j]
+        #         matrix[p4_i][p4_j] = matrix[p3_i][p3_j]
+        #         matrix[p3_i][p3_j] = matrix[p2_i][p2_j]
+        #         matrix[p2_i][p2_j] = temp
+        #
+        #     s1_i += 1
+        #     s1_j += 1
+        #     n -= 2
+
+        pass
+
 
 if __name__ == '__main__':
     matrix1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -45,3 +115,7 @@ if __name__ == '__main__':
     s.rotate(matrix2)
     print(matrix1)
     print(matrix2)
+    # [[7, 8, 9], [4, 5, 6], [1, 2, 3]]
+    # [[3, 2, 1], [6, 5, 4], [9, 8, 7]]
+    # [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+    # [[9, 6, 3], [8, 5, 2], [7, 4, 1]]
