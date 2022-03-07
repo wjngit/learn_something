@@ -62,3 +62,5 @@ if __name__ == '__main__':
     r2 = s.removeDuplicates(nums2)
     print(r1)
     print(r2)
+    print(nums1)
+    print(nums2)

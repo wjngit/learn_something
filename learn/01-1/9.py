@@ -20,12 +20,7 @@ class Solution:
         # temp = s + s[:n]
         # return temp[n:]
 
-        # temp = [""] * len(s)
-        # for i in range(n):
-        #     temp[len(s) - n + i] = s[i]
-        # for i in range(n, len(s)):
-        #     temp[i - n] = s[i]
-        # return "".join(temp)
+        pass
 
         # count = len(s)
         # temp = [""] * count
