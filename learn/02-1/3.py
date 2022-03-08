@@ -22,35 +22,6 @@ class ListNode:
         self.next = next
 
 
-class Solution:
-    def deleteDuplicates(self, head: ListNode) -> ListNode:
-        # if not head:
-        #     return head
-        # cur = head
-        # while cur.next:
-        #     if cur.val == cur.next.val:
-        #         cur.next = cur.next.next
-        #     else:
-        #         cur = cur.next
-        # return head
-
-        pass
-
-        # new_head = ListNode()
-        # tail = new_head
-        # cur = head
-        # while cur:
-        #     tmp = cur.next
-        #     if cur.val != tail.val:
-        #         tail.next = cur
-        #         tail = cur
-        #         tail.next = None
-        #     cur = tmp
-        # return new_head.next
-
-        pass
-
-
 def create(data) -> ListNode:
     new_head = ListNode(val=-1)
     tail = new_head
@@ -67,14 +38,47 @@ def travel(head):
         head = head.next
 
 
+class Solution:
+    def deleteDuplicates(self, head: ListNode) -> ListNode:
+        # if not head:
+        #     return head
+        # cur = head
+        # while cur.next:
+        #     if cur.val == cur.next.val:
+        #         cur.next = cur.next.next
+        #     else:
+        #         cur = cur.next
+        # return head
+
+        pass
+
+        # new_head = ListNode(999)
+        # tail = new_head
+        # cur = head
+        # while cur:
+        #     tmp = cur.next
+        #     if cur.val != tail.val:
+        #         tail.next = cur
+        #         tail = cur
+        #         tail.next = None
+        #     cur = tmp
+        # return new_head.next
+
+        pass
+
+
 if __name__ == '__main__':
     head1 = [1, 1, 2]
     head2 = [1, 1, 2, 3, 3]
+    head3 = [0, 0, 0, 0, 0]
     h1 = create(head1)
     h2 = create(head2)
+    h3 = create(head3)
 
     s = Solution()
     r1 = s.deleteDuplicates(h1)
     r2 = s.deleteDuplicates(h2)
+    r3 = s.deleteDuplicates(h3)
     print([i for i in travel(r1)])
     print([i for i in travel(r2)])
+    print([i for i in travel(r3)])
