@@ -40,31 +40,33 @@ def travel(head):
 
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
-        mid = self.mid(head)
-        new = self.reverse(mid.next)
-        while new:
-            if new.val != head.val:
-                return False
-            new = new.next
-            head = head.next
-        return True
+        #     mid = self.mid(head)
+        #     new = self.reverse(mid.next)
+        #     while new:
+        #         if new.val != head.val:
+        #             return False
+        #         new = new.next
+        #         head = head.next
+        #     return True
+        #
+        # @staticmethod
+        # def mid(head):
+        #     slow = fast = head
+        #     while fast.next and fast.next.next:
+        #         slow = slow.next
+        #         fast = fast.next.next
+        #     return slow
+        #
+        # def reverse(self, head):
+        #     if not head or not head.next:
+        #         return head
+        #     cur = head
+        #     node = self.reverse(cur.next)
+        #     cur.next.next = cur
+        #     cur.next = None
+        #     return node
 
-    @staticmethod
-    def mid(head):
-        slow = fast = head
-        while fast.next and fast.next.next:
-            slow = slow.next
-            fast = fast.next.next
-        return slow
-
-    def reverse(self, head):
-        if not head or not head.next:
-            return head
-        cur = head
-        node = self.reverse(cur.next)
-        cur.next.next = cur
-        cur.next = None
-        return node
+        pass
 
 
 if __name__ == '__main__':

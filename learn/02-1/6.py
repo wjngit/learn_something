@@ -26,6 +26,22 @@ class ListNode:
         self.next = next
 
 
+def create(data) -> ListNode:
+    new_head = ListNode(0)
+    tail = new_head
+    for i in data:
+        n = ListNode(i)
+        tail.next = n
+        tail = n
+    return new_head.next
+
+
+def travel(head):
+    while head:
+        yield head.val
+        head = head.next
+
+
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
         # new_head = None
@@ -49,22 +65,6 @@ class Solution:
         # return node
 
         pass
-
-
-def create(data) -> ListNode:
-    new_head = ListNode(0)
-    tail = new_head
-    for i in data:
-        n = ListNode(i)
-        tail.next = n
-        tail = n
-    return new_head.next
-
-
-def travel(head):
-    while head:
-        yield head.val
-        head = head.next
 
 
 if __name__ == '__main__':

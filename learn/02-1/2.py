@@ -26,17 +26,6 @@ class ListNode:
         self.next = next
 
 
-class Solution:
-    def middleNode(self, head: ListNode) -> ListNode:
-        # slow = fast = head
-        # while fast and fast.next:
-        #     slow = slow.next
-        #     fast = fast.next.next
-        # return slow
-
-        pass
-
-
 def create(data) -> ListNode:
     new_head = ListNode()
     tail = new_head
@@ -51,6 +40,17 @@ def travel(head):
     while head:
         yield head.val
         head = head.next
+
+
+class Solution:
+    def middleNode(self, head: ListNode) -> ListNode:
+        # slow = fast = head
+        # while fast and fast.next:
+        #     slow = slow.next
+        #     fast = fast.next.next
+        # return slow
+
+        pass
 
 
 if __name__ == '__main__':

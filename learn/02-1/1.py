@@ -30,6 +30,22 @@ class ListNode:
         self.next = next
 
 
+def create(data: List) -> ListNode:
+    new_head = ListNode()
+    tail = new_head
+    for i in data:
+        n = ListNode(val=i)
+        tail.next = n
+        tail = n
+    return new_head.next
+
+
+def travel(head):
+    while head:
+        yield head.val
+        head = head.next
+
+
 class Solution:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
         # if not head:
@@ -73,22 +89,6 @@ class Solution:
         # return new_head.next
 
         pass
-
-
-def create(data: List) -> ListNode:
-    new_head = ListNode()
-    tail = new_head
-    for i in data:
-        n = ListNode(val=i)
-        tail.next = n
-        tail = n
-    return new_head.next
-
-
-def travel(head):
-    while head:
-        yield head.val
-        head = head.next
 
 
 if __name__ == '__main__':
