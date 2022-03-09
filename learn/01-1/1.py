@@ -38,13 +38,20 @@ class Solution:
     #     return []
 
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # for i in range(len(nums)):
+        #     for j in range(i + 1, len(nums)):
+        #         if nums[i] + nums[j] == target:
+        #             return [i, j]
+        # return []
+
+        pass
+
         # temp = {}
-        # for index, data in enumerate(nums):
-        #     temp[data] = index
-        # for index, data1 in enumerate(nums):
-        #     second_index = temp.get(target - data1)
-        #     if second_index and second_index != index:
-        #         return [index, second_index]
+        # for i, data in enumerate(nums):
+        #     n = target - data
+        #     if n in temp:
+        #         return [temp[n], i]
+        #     temp[nums[i]] = i
         # return []
 
         pass

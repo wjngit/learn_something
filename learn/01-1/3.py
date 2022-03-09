@@ -29,6 +29,8 @@ class Solution:
         #     s[i] = s[n - i - 1]
         #     s[n - i - 1] = temp
 
+        pass
+
         # i, j = 0, len(s) - 1
         # while i < j:
         #     temp = s[i]

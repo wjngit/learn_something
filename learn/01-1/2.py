@@ -26,6 +26,16 @@ class Solution:
 
         pass
 
+        # temp = []
+        # for i in address:
+        #     if i != ".":
+        #         temp.append(i)
+        #     else:
+        #         temp.append("[.]")
+        # return "".join(temp)
+
+        pass
+
 
 if __name__ == '__main__':
     address1 = "1.1.1.1"

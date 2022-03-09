@@ -33,6 +33,8 @@ class Solution:
         #     return True
         # return False
 
+        pass
+
         # if x < 0:
         #     return False
         # temp = [0] * len(str(2 ** 31))
@@ -45,6 +47,8 @@ class Solution:
         #     if temp[k] != temp[j - k - 1]:
         #         return False
         # return True
+
+        pass
 
         # if x < 0:
         #     return False
