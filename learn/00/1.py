@@ -597,11 +597,10 @@ pass
 #     s = Q()
 #     s.push(1)
 #     s.push(2)
-#     s.push(3)
-#     s.push(4)
-#
 #     a1 = s.pop()
+#     s.push(3)
 #     a2 = s.pop()
+#     s.push(4)
 #     a3 = s.pop()
 #     print(a1)
 #     print(a2)
