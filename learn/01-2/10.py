@@ -59,8 +59,6 @@ class Solution:
         #     if matrix[i][j] < target:
         #         i += 1
         #         continue
-        #     i += 1
-        #     j -= 1
         # return False
 
         pass
