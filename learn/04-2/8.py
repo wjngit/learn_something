@@ -45,10 +45,82 @@ def travel(node: ListNode):
 
 class Solution:
     def insertionSortList(self, head: ListNode) -> ListNode:
+        # # todo: 冒泡排序
+        # p = head
+        # count = 0
+        # while p:
+        #     count += 1
+        #     p = p.next
+        # for i in range(count - 1):
+        #     cur = head
+        #     nxt = cur.next
+        #     pre = None
+        #     while nxt:
+        #         if cur.val > nxt.val:
+        #             if pre is None:
+        #                 pre = cur.next
+        #                 nxt = nxt.next
+        #                 pre.next = cur
+        #                 cur.next = nxt
+        #                 head = pre
+        #             else:
+        #                 temp = nxt
+        #                 nxt = nxt.next
+        #                 pre.next = cur.next
+        #                 pre = temp
+        #                 temp.next = cur
+        #                 cur.next = nxt
+        #         else:
+        #             pre = cur
+        #             cur = nxt
+        #             nxt = nxt.next
+        #     i += 1
+        # return head
+
+        pass
+
+        # # todo: 插入排序
+        # if not head:
+        #     return head
+        # new = ListNode()
+        # cur = head
+        # while cur:
+        #     temp = cur.next
+        #     p = new
+        #     while p.next and p.next.val <= cur.val:
+        #         p = p.next
+        #     cur.next = p.next
+        #     p.next = cur
+        #     cur = temp
+        # return new.next
+
+        pass
+
+        # # todo: 选择排序
+        # cur = head
+        # while cur:
+        #     min_node = cur
+        #     p = cur.next
+        #     while p:
+        #         if min_node.val > p.val:
+        #             min_node = p
+        #         p = p.next
+        #     cur_val = cur.val
+        #     cur.val = min_node.val
+        #     min_node.val = cur_val
+        #     cur = cur.next
+        # return head
+
         pass
 
 
 if __name__ == '__main__':
-    # TODO: 用链表实现5个排序算法, 不用递归也实现一下
-    # TODO: 用链表实现5个排序算法, 不用递归也实现一下
-    pass
+    head1 = [4, 2, 1, 3]
+    head2 = [-1, 5, 3, 4, 0]
+    h1 = create(head1)
+    h2 = create(head2)
+    s = Solution()
+    r1 = s.insertionSortList(h1)
+    r2 = s.insertionSortList(h2)
+    print([i for i in travel(r1)])
+    print([i for i in travel(r2)])
