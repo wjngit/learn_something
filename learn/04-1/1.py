@@ -22,17 +22,19 @@ class Solution:
     mod = 1000000007
 
     def fib(self, n: int) -> int:
-        return self.fib_r(n)
+        #     return self.fib_r(n)
+        #
+        # def fib_r(self, n):
+        #     if n < 2:
+        #         return n
+        #     num = self.memo.get(n)
+        #     if num:
+        #         return num
+        #     data = (self.fib_r(n - 1) + self.fib_r(n - 2)) % self.mod
+        #     self.memo[n] = data
+        #     return data
 
-    def fib_r(self, n):
-        if n < 2:
-            return n
-        num = self.memo.get(n)
-        if num:
-            return num
-        data = (self.fib_r(n - 1) + self.fib_r(n - 2)) % self.mod
-        self.memo[n] = data
-        return data
+        pass
 
 
 if __name__ == '__main__':

@@ -23,19 +23,21 @@ class Solution:
     memo = {}
 
     def numWays(self, n: int) -> int:
-        return self.numWays_r(n)
+        #     return self.numWays_r(n)
+        #
+        # def numWays_r(self, n):
+        #     if n == 0:
+        #         return 1
+        #     if n == 1:
+        #         return 1
+        #     num = self.memo.get(n)
+        #     if num:
+        #         return num
+        #     data = (self.numWays_r(n - 1) + self.numWays_r(n - 2)) % self.mod
+        #     self.memo[n] = data
+        #     return data
 
-    def numWays_r(self, n):
-        if n == 0:
-            return 1
-        if n == 1:
-            return 1
-        num = self.memo.get(n)
-        if num:
-            return num
-        data = (self.numWays_r(n - 1) + self.numWays_r(n - 2)) % self.mod
-        self.memo[n] = data
-        return data
+        pass
 
 
 if __name__ == '__main__':
