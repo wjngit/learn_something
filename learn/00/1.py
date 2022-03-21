@@ -52,6 +52,32 @@ pass
 
 pass
 
+
+class NodeData:
+    def __init__(self, data=999):
+        self.data = data
+        self.next = None
+
+
+def create(data):
+    new_head = NodeData()
+    tail = new_head
+    for i in data:
+        nn = NodeData(i)
+        tail.next = nn
+        tail = nn
+    return new_head.next
+
+
+def travel(head):
+    cur = head
+    while cur:
+        yield cur.data
+        cur = cur.next
+
+
+pass
+
 # # 冒泡排序
 # def bubble_sort(data):
 #     n = len(data)
@@ -61,12 +87,42 @@ pass
 #                 data[j + 1], data[j] = data[j], data[j + 1]
 #
 #
+# def bubble_sort_link(head):
+#     if not head or not head.next:
+#         return head
+#     new_head = NodeData()
+#     pre = new_head
+#     pre.next = head
+#     cur = pre.next
+#     end = None
+#     while cur != end:
+#         while cur.next != end:
+#             if cur.data > cur.next.data:
+#                 temp = cur.next
+#                 cur.next = cur.next.next
+#                 temp.next = cur
+#                 pre.next = temp
+#                 pre = temp
+#             else:
+#                 pre = cur
+#                 cur = cur.next
+#         end = cur
+#         pre = new_head
+#         cur = pre.next
+#     return new_head.next
+#
+#
 # if __name__ == '__main__':
 #     a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
 #     print(a_list, "*" * 5)
 #     a1_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
 #     bubble_sort(a1_list)
 #     print(a1_list)
+#
+#     a2_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+#     head = create(a2_list)
+#     h1 = bubble_sort_link(head)
+#     print([i for i in travel(h1)], "^" * 10)
 
 pass
 
@@ -81,12 +137,33 @@ pass
 #                 break
 #
 #
+# def insert_sort_link(head):
+#     if not head or not head.next:
+#         return head
+#     new_head = NodeData()
+#     cur = head
+#     while cur:
+#         temp = cur.next
+#         pre = new_head
+#         while pre.next and pre.next.data < cur.data:
+#             pre = pre.next
+#         cur.next = pre.next
+#         pre.next = cur
+#         cur = temp
+#     return new_head.next
+#
+#
 # if __name__ == '__main__':
 #     a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
 #     print(a_list, "*" * 5)
 #     a1_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
 #     insert_sort(a1_list)
 #     print(a1_list)
+#
+#     a2_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+#     head = create(a2_list)
+#     h1 = insert_sort_link(head)
+#     print([i for i in travel(h1)], "^" * 10)
 
 pass
 
@@ -102,12 +179,35 @@ pass
 #             data[min_], data[i] = data[i], data[min_]
 #
 #
+# def select_sort_link(head):
+#     if not head or not head.next:
+#         return head
+#     cur = head
+#     while cur:
+#         min_node = cur
+#         p = cur.next
+#         while p:
+#             if min_node.data > p.data:
+#                 min_node = p
+#             p = p.next
+#         cur_val = cur.data
+#         cur.data = min_node.data
+#         min_node.data = cur_val
+#         cur = cur.next
+#     return head
+#
+#
 # if __name__ == '__main__':
 #     a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
 #     print(a_list, "*" * 5)
 #     a1_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
 #     select_sort(a1_list)
 #     print(a1_list)
+#
+#     a2_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+#     head = create(a2_list)
+#     h1 = select_sort_link(head)
+#     print([i for i in travel(h1)], "^" * 10)
 
 pass
 
@@ -132,12 +232,190 @@ pass
 #     return temp
 #
 #
+# class MergeSort:
+#     def merge_sort1(self, data):
+#         """递归"""
+#         self.merge_sort1_r(data, 0, len(data) - 1)
+#
+#     def merge_sort1_r(self, data, start, end):
+#         if start >= end:
+#             return
+#         mid = start + (end - start) // 2
+#         self.merge_sort_r(data, start, mid)
+#         self.merge_sort_r(data, mid + 1, end)
+#         self.merge_func(data, start, mid, end)
+#
+#     @staticmethod
+#     def merge_func(data, start, mid, end):
+#         i, j = start, mid + 1
+#         temp = []
+#         while i <= mid and j <= end:
+#             if data[i] <= data[j]:
+#                 temp.append(data[i])
+#                 i += 1
+#             else:
+#                 temp.append(data[j])
+#                 j += 1
+#         while i <= mid:
+#             temp.append(data[i])
+#             i += 1
+#         while j <= end:
+#             temp.append(data[j])
+#             j += 1
+#         data[start:end + 1] = temp
+#
+#     def merge_sort2(self, data):
+#         """非递归"""
+#         n = len(data)
+#         step = 1
+#         while step < n:
+#             i = 0
+#             while i + step < n:
+#                 low = i
+#                 mid = i + step - 1
+#                 high = i + step * 2 - 1
+#                 if high > n - 1:
+#                     high = n - 1
+#                 self.merge_func(data, low, mid, high)
+#                 i += step * 2
+#             step *= 2
+#
+#
+# class MergeSortLink:
+#     def merge_sort1(self, head):
+#         """递归"""
+#         if not head or not head.next:
+#             return head
+#         mid_node = self.find_mid_node(head)
+#         next_node = mid_node.next
+#         mid_node.next = None
+#         left_head = self.merge_sort1(head)
+#         right_head = self.merge_sort1(next_node)
+#         return self.merge_func1(left_head, right_head)
+#
+#     @staticmethod
+#     def merge_func1(left_head, right_head):
+#         new_head = NodeData()
+#         tail = new_head
+#         cur_l, cur_r = left_head, right_head
+#         while cur_l and cur_r:
+#             if cur_l.data <= cur_r.data:
+#                 tail.next = cur_l
+#                 tail = cur_l
+#                 cur_l = cur_l.next
+#             else:
+#                 tail.next = cur_r
+#                 tail = cur_r
+#                 cur_r = cur_r.next
+#         if cur_l:
+#             tail.next = cur_l
+#         if cur_r:
+#             tail.next = cur_r
+#         return new_head.next
+#
+#     @staticmethod
+#     def find_mid_node(head):
+#         slow = fast = head
+#         while fast.next and fast.next.next:
+#             slow = slow.next
+#             fast = fast.next.next
+#         return slow
+#
+#     def merge_sort2(self, head):
+#         """非递归"""
+#         if not head or not head.next:
+#             return head
+#         n = self.get_len(head)
+#         step = 1
+#         while step < n:
+#             new_head = NodeData()
+#             tail = new_head
+#             left = head
+#             while left:
+#                 mid = left
+#                 count = 1
+#                 while mid and count < step:
+#                     mid = mid.next
+#                     count += 1
+#
+#                 if not mid or not mid.next:
+#                     tail.next = left
+#                     break
+#
+#                 right = mid.next
+#                 count = 1
+#                 while right and count < step:
+#                     right = right.next
+#                     count += 1
+#
+#                 temp = None
+#                 if right:
+#                     temp = right.next
+#
+#                 head_tail = self.merge_func2(left, mid, right)
+#                 tail.next = head_tail[0]
+#                 tail = head_tail[1]
+#
+#                 left = temp
+#             head = new_head.next
+#             step *= 2
+#         return head
+#
+#     @staticmethod
+#     def merge_func2(left, mid, right):
+#         new_head = NodeData()
+#         tail = new_head
+#         cur_l, cur_r = left, mid.next
+#         mid.next = None
+#         if right:
+#             right.next = None
+#         while cur_l and cur_r:
+#             if cur_l.data <= cur_r.data:
+#                 tail.next = cur_l
+#                 tail = cur_l
+#                 cur_l = cur_l.next
+#             else:
+#                 tail.next = cur_r
+#                 tail = cur_r
+#                 cur_r = cur_r.next
+#         if cur_l:
+#             tail.next = cur_l
+#             tail = mid
+#         if cur_r:
+#             tail.next = cur_r
+#             tail = right
+#         return new_head.next, tail
+#
+#     @staticmethod
+#     def get_len(head):
+#         cur = head
+#         n = 0
+#         while cur:
+#             n += 1
+#             cur = cur.next
+#         return n
+#
+#
 # if __name__ == '__main__':
 #     a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
 #     print(a_list, "*" * 5)
-#     a1_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     a1_list = merge_sort(a1_list)
-#     print(a1_list)
+#     a11_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+#     a12_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+#     merge_sort = MergeSort()
+#     merge_sort.merge_sort1(a11_list)
+#     merge_sort.merge_sort2(a12_list)
+#     print(a11_list, "111")
+#     print(a12_list, "222")
+#
+#     a21_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+#     a22_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+#     head1 = create(a21_list)
+#     head2 = create(a22_list)
+#     merge_sort_link = MergeSortLink()
+#     h1 = merge_sort_link.merge_sort1(head1)
+#     h2 = merge_sort_link.merge_sort2(head2)
+#     print([i for i in travel(h1)], "^" * 10)
+#     print([i for i in travel(h2)], "^" * 10)
 
 pass
 
@@ -159,12 +437,146 @@ pass
 #     quick_sort(data, low + 1, end)
 #
 #
+# class QuickSort:
+#     stack = []
+#
+#     def quick_sort1(self, data):
+#         """递归"""
+#         self.quick_sort1_r(data, 0, len(data) - 1)
+#
+#     def quick_sort1_r(self, data, start, end):
+#         if start >= end:
+#             return
+#         mid = self.partition(data, start, end)
+#         self.quick_sort1_r(data, start, mid - 1)
+#         self.quick_sort1_r(data, mid + 1, end)
+#
+#     def partition(self, data, start, end):
+#         i, j = start, end - 1
+#         pivot = data[end]
+#         while i < j:
+#             if data[i] < pivot:
+#                 i += 1
+#                 continue
+#             if data[j] > pivot:
+#                 j -= 1
+#                 continue
+#             self.swap(data, i, j)
+#             i += 1
+#             j -= 1
+#         if data[j] < pivot:
+#             j += 1
+#         self.swap(data, j, end)
+#         return j
+#
+#     @staticmethod
+#     def swap(data, i, j):
+#         temp = data[i]
+#         data[i], data[j] = data[j], temp
+#
+#     def quick_sort2(self, data):
+#         """非递归"""
+#         self.quick_sort2_r(data, 0, len(data) - 1)
+#
+#     def quick_sort2_r(self, data, start, end):
+#         self.stack.append(start)
+#         self.stack.append(end)
+#         while self.stack:
+#             end = self.stack.pop()
+#             start = self.stack.pop()
+#             mid = self.partition(data, start, end)
+#             if start < mid - 1:
+#                 self.stack.append(start)
+#                 self.stack.append(mid - 1)
+#             if mid + 1 < end:
+#                 self.stack.append(mid + 1)
+#                 self.stack.append(end)
+#
+#
+# class QuickSortLink:
+#     stack = []
+#
+#     def quick_sort1(self, head):
+#         """递归"""
+#         if not head or not head.next:
+#             return head
+#         self.quick_sort1_r(head, self.get_end_node(head))
+#         return head
+#
+#     def quick_sort1_r(self, start, end):
+#         if not start or not start.next or start == end:
+#             return
+#         mid1, mid2 = self.partition(start, end)
+#         self.quick_sort1_r(start, mid1)
+#         self.quick_sort1_r(mid2, end)
+#
+#     def partition(self, start, end):
+#         pivot = start.data
+#         pre = start
+#         i, j = start.next, start.next
+#         while j != end.next:
+#             if j.data < pivot:
+#                 self.swap(i, j)
+#                 pre = i
+#                 i = i.next
+#             j = j.next
+#         self.swap(start, pre)
+#         return pre, i
+#
+#     @staticmethod
+#     def swap(node_a, node_b):
+#         temp = node_a.data
+#         node_a.data, node_b.data = node_b.data, temp
+#
+#     @staticmethod
+#     def get_end_node(head):
+#         cur = head
+#         while cur.next:
+#             cur = cur.next
+#         return cur
+#
+#     def quick_sort2(self, head):
+#         """非递归"""
+#         if not head or not head.next:
+#             return head
+#         self.quick_sort2_r(head, self.get_end_node(head))
+#         return head
+#
+#     def quick_sort2_r(self, start, end):
+#         self.stack.append(start)
+#         self.stack.append(end)
+#         while self.stack:
+#             end = self.stack.pop()
+#             start = self.stack.pop()
+#             mid1, mid2 = self.partition(start, end)
+#             if start and start != mid1:
+#                 self.stack.append(start)
+#                 self.stack.append(mid1)
+#             if mid2 and mid2 != end:
+#                 self.stack.append(mid2)
+#                 self.stack.append(end)
+#
+#
 # if __name__ == '__main__':
 #     a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
 #     print(a_list, "*" * 5)
-#     a1_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     quick_sort(a1_list, 0, len(a1_list) - 1)
-#     print(a1_list)
+#     a11_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+#     a12_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+#     quick_sort = QuickSort()
+#     quick_sort.quick_sort1(a11_list)
+#     quick_sort.quick_sort2(a12_list)
+#     print(a11_list, "111")
+#     print(a12_list, "222")
+#
+#     a21_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+#     a22_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+#     head1 = create(a21_list)
+#     head2 = create(a22_list)
+#     quick_sort_link = QuickSortLink()
+#     h1 = quick_sort_link.quick_sort1(head1)
+#     h2 = quick_sort_link.quick_sort2(head2)
+#     print([i for i in travel(h1)], "^" * 10)
+#     print([i for i in travel(h2)], "^" * 10)
 
 pass
 
@@ -574,7 +986,6 @@ pass
 #     print([i for i in h3.travel()])
 
 pass
-
 
 # # 用两个栈实现队列
 # class Q:

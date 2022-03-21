@@ -46,36 +46,28 @@ def travel(node: ListNode):
 class Solution:
     def insertionSortList(self, head: ListNode) -> ListNode:
         # # todo: 冒泡排序
-        # p = head
-        # count = 0
-        # while p:
-        #     count += 1
-        #     p = p.next
-        # for i in range(count - 1):
-        #     cur = head
-        #     nxt = cur.next
-        #     pre = None
-        #     while nxt:
-        #         if cur.val > nxt.val:
-        #             if pre is None:
-        #                 pre = cur.next
-        #                 nxt = nxt.next
-        #                 pre.next = cur
-        #                 cur.next = nxt
-        #                 head = pre
-        #             else:
-        #                 temp = nxt
-        #                 nxt = nxt.next
-        #                 pre.next = cur.next
-        #                 pre = temp
-        #                 temp.next = cur
-        #                 cur.next = nxt
+        # if not head or not head.next:
+        #     return head
+        # new_head = ListNode()
+        # pre = new_head
+        # pre.next = head
+        # cur = pre.next
+        # end = None
+        # while cur != end:
+        #     while cur.next != end:
+        #         if cur.val > cur.next.val:
+        #             temp = cur.next
+        #             cur.next = cur.next.next
+        #             temp.next = cur
+        #             pre.next = temp
+        #             pre = temp
         #         else:
         #             pre = cur
-        #             cur = nxt
-        #             nxt = nxt.next
-        #     i += 1
-        # return head
+        #             cur = cur.next
+        #     end = cur
+        #     pre = new_head
+        #     cur = pre.next
+        # return new_head.next
 
         pass
 
