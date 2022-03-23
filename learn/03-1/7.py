@@ -22,57 +22,53 @@
 
 class Solution:
     def calculate(self, s: str) -> int:
-        # data = []
-        # option = []
-        # n = len(s)
-        # i = 0
-        # while i < n:
-        #     c = s[i]
-        #     if c == " ":
-        #         i += 1
-        #     elif c.isdigit():
-        #         num = 0
-        #         while i < n and s[i].isdigit():
-        #             num = num * 10 + int(s[i])
+        #     data = []
+        #     option = []
+        #     n = len(s)
+        #     i = 0
+        #     while i < n:
+        #         c = s[i]
+        #         if c == " ":
         #             i += 1
-        #         data.append(num)
-        #     else:
-        #         if not option or self.aaa(option[-1], c):
-        #             option.append(c)
+        #         elif c.isdigit():
+        #             num = 0
+        #             while i < n and s[i].isdigit():
+        #                 num = num * 10 + int(s[i])
+        #                 i += 1
+        #             data.append(num)
         #         else:
-        #             while option and not self.aaa(option[-1], c):
-        #                 self.ccc(option, data)
-        #             option.append(c)
-        #         i += 1
-        # while option:
-        #     self.ccc(option, data)
-        # return data.pop()
-
-        pass
-
-    def aaa(self, opt, c):
-        # if c in ["*", "/"] and opt in ["+", "-"]:
-        #     return True
-        # return False
-
-        pass
-
-    def bbb(self, opt, num1, num2):
-        if opt == "+":
-            return num1 + num2
-        if opt == "-":
-            return num1 - num2
-        if opt == "*":
-            return num1 * num2
-        if opt == "/":
-            return num1 // num2
-
-    def ccc(self, option, data):
-        # num2 = data.pop()
-        # num1 = data.pop()
-        # opt = option.pop()
-        # ret = self.bbb(opt, num1, num2)
-        # data.append(ret)
+        #             if not option or self.aaa(option[-1], c):
+        #                 option.append(c)
+        #             else:
+        #                 while option and not self.aaa(option[-1], c):
+        #                     self.ccc(option, data)
+        #                 option.append(c)
+        #             i += 1
+        #     while option:
+        #         self.ccc(option, data)
+        #     return data.pop()
+        #
+        # def aaa(self, opt, c):
+        #     if c in ["*", "/"] and opt in ["+", "-"]:
+        #         return True
+        #     return False
+        #
+        # def bbb(self, opt, num1, num2):
+        #     if opt == "+":
+        #         return num1 + num2
+        #     if opt == "-":
+        #         return num1 - num2
+        #     if opt == "*":
+        #         return num1 * num2
+        #     if opt == "/":
+        #         return num1 // num2
+        #
+        # def ccc(self, option, data):
+        #     num2 = data.pop()
+        #     num1 = data.pop()
+        #     opt = option.pop()
+        #     ret = self.bbb(opt, num1, num2)
+        #     data.append(ret)
 
         pass
 

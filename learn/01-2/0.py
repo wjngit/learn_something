@@ -22,7 +22,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    n = 10
+    n = 10  # 17
     s = Solution()
     ret = s.a(10)
     print(ret)

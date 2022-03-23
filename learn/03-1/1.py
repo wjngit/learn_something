@@ -62,10 +62,6 @@ class CQueue:
 
         pass
 
-        if not self.s2:
-            return -1
-        return self.s2.pop()
-
 
 if __name__ == '__main__':
     obj = CQueue()

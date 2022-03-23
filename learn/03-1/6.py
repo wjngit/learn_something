@@ -32,9 +32,9 @@
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        stack = []
-        in_data = ["(", "[", "{"]
-        temp_dict = {")": "(", "]": "[", "}": "{"}
+        # stack = []
+        # in_data = ["(", "[", "{"]
+        # temp_dict = {")": "(", "]": "[", "}": "{"}
         # for i in s:
         #     if i in in_data:
         #         stack.append(i)

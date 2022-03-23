@@ -13,24 +13,22 @@
 # 示例 3：
 # 输入：x = 2.00000, n = -2
 # 输出：0.25000
-# 解释：2-2 = 1/22 = 1/4 = 0.25
+# 解释：2^-2 = 1/2^2 = 1/4 = 0.25
 
 class Solution:
     def myPow(self, x: float, n: int) -> float:
-        # if n >= 0:
-        #     return self.pow_r(x, n)
-        # else:
-        #     return 1 / (self.pow_r(x, -1 * (n + 1)) * x)
-
-        pass
-
-    def pow_r(self, x, n):
-        # if n == 0:
-        #     return 1
-        # half = self.pow_r(x, n // 2)
-        # if n % 2 == 1:
-        #     return half * half * x
-        # return half * half
+        #     if n >= 0:
+        #         return self.pow_r(x, n)
+        #     else:
+        #         return 1 / (self.pow_r(x, -1 * (n + 1)) * x)
+        #
+        # def pow_r(self, x, n):
+        #     if n == 0:
+        #         return 1
+        #     half = self.pow_r(x, n // 2)
+        #     if n % 2 == 1:
+        #         return half * half * x
+        #     return half * half
 
         pass
 
