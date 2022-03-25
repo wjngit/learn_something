@@ -42,8 +42,8 @@ class TreeNode:
 
 
 class Solution:
-    def __init__(self):
-        self.result = 0
+    # def __init__(self):
+    #     self.result = 0
 
     def convertBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         #     self.order(root)
@@ -56,7 +56,6 @@ class Solution:
         #     self.result += root.val
         #     root.val = self.result
         #     self.order(root.left)
-        #     return
 
         pass
 

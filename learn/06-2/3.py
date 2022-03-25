@@ -36,8 +36,8 @@ class TreeNode:
 
 
 class Solution:
-    def __init__(self):
-        self.balance = True
+    # def __init__(self):
+    #     self.balance = True
 
     def isBalanced(self, root: TreeNode) -> bool:
         #     self.height(root)

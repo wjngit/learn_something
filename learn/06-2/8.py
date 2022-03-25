@@ -33,9 +33,9 @@ class TreeNode:
 
 
 class Solution:
-    def __init__(self):
-        self.count = 0
-        self.result = 0
+    # def __init__(self):
+    #     self.count = 0
+    #     self.result = 0
 
     def kthLargest(self, root: TreeNode, k: int) -> int:
         #     self.order(root, k)

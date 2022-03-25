@@ -29,8 +29,8 @@ class TreeNode:
 
 
 class Solution:
-    def __init__(self):
-        self.valid = True
+    # def __init__(self):
+    #     self.valid = True
 
     def isValidBST(self, root: TreeNode) -> bool:
         #     if not root:

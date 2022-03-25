@@ -31,26 +31,25 @@ class TreeNode:
 
 
 class Solution:
-    def __init__(self):
-        self.next = False
-        self.node = None
+    # def __init__(self):
+    #     self.next_target = False
+    #     self.target_node = None
 
     def inorderSuccessor(self, root: TreeNode, p: TreeNode) -> TreeNode:
         #     self.order(root, p)
-        #     return self.node
+        #     return self.target_node
         #
         # def order(self, root, p):
         #     if not root:
         #         return
         #     self.order(root.left, p)
-        #     if self.node:
+        #     if self.target_node:
         #         return
-        #     if self.next:
-        #         self.node = root
-        #         self.next = False
+        #     if self.next_target:
+        #         self.target_node = root
         #         return
         #     if root == p:
-        #         self.next = True
+        #         self.next_target = True
         #     self.order(root.right, p)
 
         pass
