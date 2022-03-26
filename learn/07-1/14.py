@@ -29,33 +29,35 @@ class TreeNode:
 
 
 class Solution:
-    def __init__(self):
-        self.count = 0
-
     def pathSum(self, root: TreeNode, targetSum: int) -> int:
-        self.dfs(root, targetSum)
-        return self.count
+        #     self.dfs(root, targetSum)
+        #     return self.count
+        #
+        # def __init__(self):
+        #     self.count = 0
+        #
+        # def dfs(self, root, target):
+        #     if not root:
+        #         return {}
+        #     left = self.dfs(root.left, target)
+        #     right = self.dfs(root.right, target)
+        #     root_value = {root.val: 1}
+        #     for key, value in left.items():
+        #         key += root.val
+        #         if key in root_value:
+        #             value += root_value[key]
+        #         root_value[key] = value
+        #     for key, value in right.items():
+        #         key += root.val
+        #         if key in root_value:
+        #             value += root_value[key]
+        #         root_value[key] = value
+        #     for key, value in root_value.items():
+        #         if key == target:
+        #             self.count += value
+        #     return root_value
 
-    def dfs(self, root, target):
-        if not root:
-            return {}
-        left = self.dfs(root.left, target)
-        right = self.dfs(root.right, target)
-        root_value = {root.val: 1}
-        for key, value in left.items():
-            key += root.val
-            if key in root_value:
-                value += root_value[key]
-            root_value[key] = value
-        for key, value in right.items():
-            key += root.val
-            if key in root_value:
-                value += root_value[key]
-            root_value[key] = value
-        for key, value in root_value.items():
-            if key == target:
-                self.count += value
-        return root_value
+        pass
 
 
 if __name__ == '__main__':

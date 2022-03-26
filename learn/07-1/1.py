@@ -37,29 +37,31 @@ class TreeNode:
 
 class Solution:
     def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
-        self.func(root, p, q)
-        return self.lca
+        #     self.func(root, p, q)
+        #     return self.lca
+        #
+        # def __init__(self):
+        #     self.lca = None
+        #
+        # def func(self, root, p, q):
+        #     if root is None:
+        #         return 0
+        #     left_count = self.func(root.left, p, q)
+        #     if self.lca:
+        #         return 2
+        #     right_count = self.func(root.right, p, q)
+        #     if self.lca:
+        #         return 2
+        #     count = 0
+        #     if root == p or root == q:
+        #         count = 1
+        #     if count == 0 and left_count == 1 and right_count == 1:
+        #         self.lca = root
+        #     if count == 1 and (left_count == 1 or right_count == 1):
+        #         self.lca = root
+        #     return count + left_count + right_count
 
-    def __init__(self):
-        self.lca = None
-
-    def func(self, root, p, q):
-        if root is None:
-            return 0
-        left_count = self.func(root.left, p, q)
-        if self.lca:
-            return 2
-        right_count = self.func(root.right, p, q)
-        if self.lca:
-            return 2
-        count = 0
-        if root == p or root == q:
-            count = 1
-        if count == 0 and left_count == 1 and right_count == 1:
-            self.lca = root
-        if count == 1 and (left_count == 1 or right_count == 1):
-            self.lca = root
-        return count + left_count + right_count
+        pass
 
 
 if __name__ == '__main__':

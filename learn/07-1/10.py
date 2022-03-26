@@ -25,24 +25,26 @@ from typing import List
 
 class Solution:
     def verifyPostorder(self, postorder: List[int]) -> bool:
-        return self.verify(postorder, 0, len(postorder) - 1)
+        #     return self.verify(postorder, 0, len(postorder) - 1)
+        #
+        # def verify(self, postorder, i, j):
+        #     if i >= j:
+        #         return True
+        #     k = i
+        #     while k < j and postorder[k] < postorder[j]:
+        #         k += 1
+        #     p = k
+        #     while p < j:
+        #         if postorder[j] > postorder[p]:
+        #             return False
+        #         p += 1
+        #     left_valid = self.verify(postorder, i, k - 1)
+        #     if not left_valid:
+        #         return False
+        #     right_valid = self.verify(postorder, k, j - 1)
+        #     return right_valid
 
-    def verify(self, postorder, i, j):
-        if i >= j:
-            return True
-        k = i
-        while k < j and postorder[k] < postorder[j]:
-            k += 1
-        p = k
-        while p < j:
-            if postorder[j] > postorder[p]:
-                return False
-            p += 1
-        left_valid = self.verify(postorder, i, k - 1)
-        if not left_valid:
-            return False
-        right_valid = self.verify(postorder, k, j - 1)
-        return right_valid
+        pass
 
 
 if __name__ == '__main__':

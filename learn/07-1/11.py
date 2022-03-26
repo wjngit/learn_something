@@ -23,21 +23,23 @@ class TreeNode:
 
 
 class Solution:
-    def __init__(self):
-        self.result = 0
-
     def diameterOfBinaryTree(self, root: TreeNode) -> int:
-        self.height(root)
-        return self.result
+        #     self.height(root)
+        #     return self.result
+        #
+        # def __init__(self):
+        #     self.result = 0
+        #
+        # def height(self, root):
+        #     if not root:
+        #         return 0
+        #     left_height = self.height(root.left)
+        #     right_height = self.height(root.right)
+        #     if left_height + right_height > self.result:
+        #         self.result = left_height + right_height
+        #     return max(left_height, right_height) + 1
 
-    def height(self, root):
-        if not root:
-            return 0
-        left_height = self.height(root.left)
-        right_height = self.height(root.right)
-        if left_height + right_height > self.result:
-            self.result = left_height + right_height
-        return max(left_height, right_height) + 1
+        pass
 
 
 if __name__ == '__main__':

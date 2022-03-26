@@ -19,25 +19,27 @@ class Node:
 
 class Solution:
     def treeToDoublyList(self, root: Node) -> Node:
-        if not root:
-            return root
-        self.order(root)
-        self.tail.right = self.new_head.right
-        self.new_head.right.left = self.tail
-        return self.new_head.right
+        #     if not root:
+        #         return root
+        #     self.order(root)
+        #     self.tail.right = self.new_head.right
+        #     self.new_head.right.left = self.tail
+        #     return self.new_head.right
+        #
+        # def __init__(self):
+        #     self.new_head = Node(999)
+        #     self.tail = self.new_head
+        #
+        # def order(self, root):
+        #     if not root:
+        #         return root
+        #     self.order(root.left)
+        #     root.left = self.tail
+        #     self.tail.right = root
+        #     self.tail = root
+        #     self.order(root.right)
 
-    def __init__(self):
-        self.new_head = Node(999)
-        self.tail = self.new_head
-
-    def order(self, root):
-        if not root:
-            return root
-        self.order(root.left)
-        root.left = self.tail
-        self.tail.right = root
-        self.tail = root
-        self.order(root.right)
+        pass
 
 
 if __name__ == '__main__':

@@ -31,20 +31,22 @@ class TreeNode:
 
 class Solution:
     def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
-        x = root
-        while True:
-            if p.val < x.val and q.val < x.val:
-                x = x.left
-            elif p.val > x.val and q.val > x.val:
-                x = x.right
-            elif p == x or q == x:
-                return x
-            elif p.val < x.val < q.val:
-                return x
-            elif q.val < x.val < q.val:
-                return x
-            else:
-                return x
+        # x = root
+        # while True:
+        #     if p.val < x.val and q.val < x.val:
+        #         x = x.left
+        #     elif p.val > x.val and q.val > x.val:
+        #         x = x.right
+        #     elif p == x or q == x:
+        #         return x
+        #     elif p.val < x.val < q.val:
+        #         return x
+        #     elif q.val < x.val < q.val:
+        #         return x
+        #     else:
+        #         return x
+
+        pass
 
 
 if __name__ == '__main__':

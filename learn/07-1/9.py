@@ -35,23 +35,25 @@ class TreeNode:
 
 class Solution:
     def constructFromPrePost(self, preorder: List[int], postorder: List[int]) -> TreeNode:
-        return self.tree(preorder, 0, len(preorder) - 1, postorder, 0, len(postorder) - 1)
+        #     return self.tree(preorder, 0, len(preorder) - 1, postorder, 0, len(postorder) - 1)
+        #
+        # def tree(self, preorder, i, j, postorder, p, r):
+        #     if i > j:
+        #         return
+        #     root = TreeNode(preorder[i])
+        #     if i == j:
+        #         return root
+        #     q = p
+        #     while postorder[q] != preorder[i + 1]:
+        #         q += 1
+        #     left_size = q - p + 1
+        #     left_node = self.tree(preorder, i + 1, i + left_size, postorder, p, q)
+        #     right_node = self.tree(preorder, i + left_size + 1, j, postorder, q + 1, r - 1)
+        #     root.left = left_node
+        #     root.right = right_node
+        #     return root
 
-    def tree(self, preorder, i, j, postorder, p, r):
-        if i > j:
-            return
-        root = TreeNode(preorder[i])
-        if i == j:
-            return root
-        q = p
-        while postorder[q] != preorder[i + 1]:
-            q += 1
-        left_size = q - p + 1
-        left_node = self.tree(preorder, i + 1, i + left_size, postorder, p, q)
-        right_node = self.tree(preorder, i + left_size + 1, j, postorder, q + 1, r - 1)
-        root.left = left_node
-        root.right = right_node
-        return root
+        pass
 
 
 if __name__ == '__main__':

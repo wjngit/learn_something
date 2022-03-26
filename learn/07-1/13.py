@@ -32,31 +32,33 @@ class TreeNode:
 
 
 class Solution:
-    def __init__(self):
-        self.result = -1001
-
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
-        self.order(root)
-        return self.result
+        #     self.order(root)
+        #     return self.result
+        #
+        # def __init__(self):
+        #     self.result = -1001
+        #
+        # def order(self, root):
+        #     if not root:
+        #         return 0
+        #     left = self.order(root.left)
+        #     right = self.order(root.right)
+        #     num = root.val
+        #     if left > 0:
+        #         num += left
+        #     if right > 0:
+        #         num += right
+        #     if num > self.result:
+        #         self.result = num
+        #     ret = root.val
+        #     if ret < left + root.val:
+        #         ret = left + root.val
+        #     if ret < right + root.val:
+        #         ret = right + root.val
+        #     return ret
 
-    def order(self, root):
-        if not root:
-            return 0
-        left = self.order(root.left)
-        right = self.order(root.right)
-        num = root.val
-        if left > 0:
-            num += left
-        if right > 0:
-            num += right
-        if num > self.result:
-            self.result = num
-        ret = root.val
-        if ret < left + root.val:
-            ret = left + root.val
-        if ret < right + root.val:
-            ret = right + root.val
-        return ret
+        pass
 
 
 if __name__ == '__main__':

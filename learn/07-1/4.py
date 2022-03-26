@@ -22,21 +22,23 @@ class TreeNode:
 
 class Solution:
     def convertBiNode(self, root: TreeNode) -> TreeNode:
-        self.order(root)
-        return self.new_head.right
+        #     self.order(root)
+        #     return self.new_head.right
+        #
+        # def __init__(self):
+        #     self.new_head = TreeNode(999)
+        #     self.tail = self.new_head
+        #
+        # def order(self, root):
+        #     if not root:
+        #         return
+        #     self.order(root.left)
+        #     self.tail.right = root
+        #     self.tail = root
+        #     self.tail.left = None
+        #     self.order(root.right)
 
-    def __init__(self):
-        self.new_head = TreeNode(999)
-        self.tail = self.new_head
-
-    def order(self, root):
-        if not root:
-            return
-        self.order(root.left)
-        self.tail.right = root
-        self.tail = root
-        self.tail.left = None
-        self.order(root.right)
+        pass
 
 
 if __name__ == '__main__':

@@ -34,28 +34,30 @@ class TreeNode:
 
 
 class Solution:
-    def __init__(self):
-        self.result = []
-
     def pathSum(self, root: TreeNode, target: int) -> List[List[int]]:
-        if not root:
-            return self.result
-        self.order(root, target, [], 0)
-        return self.result
+        #     if not root:
+        #         return self.result
+        #     self.order(root, target, [], 0)
+        #     return self.result
+        #
+        # def __init__(self):
+        #     self.result = []
+        #
+        # def order(self, root, target, path, path_sum):
+        #     path.append(root.val)
+        #     path_sum += root.val
+        #     if not root.left and not root.right:
+        #         if path_sum == target:
+        #             self.result.append(path[:])
+        #         path.pop()
+        #         return
+        #     if root.left:
+        #         self.order(root.left, target, path, path_sum)
+        #     if root.right:
+        #         self.order(root.right, target, path, path_sum)
+        #     path.pop()
 
-    def order(self, root, target, path, path_sum):
-        path.append(root.val)
-        path_sum += root.val
-        if not root.left and not root.right:
-            if path_sum == target:
-                self.result.append(path[:])
-            path.pop()
-            return
-        if root.left:
-            self.order(root.left, target, path, path_sum)
-        if root.right:
-            self.order(root.right, target, path, path_sum)
-        path.pop()
+        pass
 
 
 if __name__ == '__main__':

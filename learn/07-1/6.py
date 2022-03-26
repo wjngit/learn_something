@@ -36,23 +36,25 @@ class ListNode:
 
 class Solution:
     def listOfDepth(self, tree: TreeNode) -> List[ListNode]:
-        res = []
-        if not tree:
-            return res
-        q = [tree]
-        while q:
-            new_head = ListNode(999)
-            tail = new_head
-            for _ in range(len(q)):
-                node = q.pop(0)
-                tail.next = ListNode(node.val)
-                tail = tail.next
-                if node.left:
-                    q.append(node.left)
-                if node.right:
-                    q.append(node.right)
-            res.append(new_head.next)
-        return res
+        # res = []
+        # if not tree:
+        #     return res
+        # q = [tree]
+        # while q:
+        #     new_head = ListNode(999)
+        #     tail = new_head
+        #     for _ in range(len(q)):
+        #         node = q.pop(0)
+        #         tail.next = ListNode(node.val)
+        #         tail = tail.next
+        #         if node.left:
+        #             q.append(node.left)
+        #         if node.right:
+        #             q.append(node.right)
+        #     res.append(new_head.next)
+        # return res
+
+        pass
 
 
 if __name__ == '__main__':

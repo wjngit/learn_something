@@ -36,22 +36,24 @@ class Solution:
         """
         Do not return anything, modify root in-place instead.
         """
-        self.order(root)
+        #     self.order(root)
+        #
+        # def __init__(self):
+        #     self.new_head = TreeNode()
+        #     self.tail = self.new_head
+        #
+        # def order(self, root):
+        #     if not root:
+        #         return
+        #     left = root.left
+        #     right = root.right
+        #     self.tail.right = root
+        #     self.tail = root
+        #     self.tail.left = None
+        #     self.order(left)
+        #     self.order(right)
 
-    def __init__(self):
-        self.new_head = TreeNode()
-        self.tail = self.new_head
-
-    def order(self, root):
-        if not root:
-            return
-        left = root.left
-        right = root.right
-        self.tail.right = root
-        self.tail = root
-        self.tail.left = None
-        self.order(left)
-        self.order(right)
+        pass
 
 
 if __name__ == '__main__':

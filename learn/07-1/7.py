@@ -33,21 +33,23 @@ class TreeNode:
 
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
-        return self.tree(preorder, 0, len(preorder) - 1, inorder, 0, len(inorder) - 1)
+        #     return self.tree(preorder, 0, len(preorder) - 1, inorder, 0, len(inorder) - 1)
+        #
+        # def tree(self, preorder, i, j, inorder, p, r):
+        #     if i > j:
+        #         return
+        #     root = TreeNode(preorder[i])
+        #     q = p
+        #     while inorder[q] != preorder[i]:
+        #         q += 1
+        #     left_size = q - p
+        #     left_node = self.tree(preorder, i + 1, i + left_size, inorder, p, q - 1)
+        #     right_node = self.tree(preorder, i + left_size + 1, j, inorder, q + 1, r)
+        #     root.left = left_node
+        #     root.right = right_node
+        #     return root
 
-    def tree(self, preorder, i, j, inorder, p, r):
-        if i > j:
-            return
-        root = TreeNode(preorder[i])
-        q = p
-        while inorder[q] != preorder[i]:
-            q += 1
-        left_size = q - p
-        left_node = self.tree(preorder, i + 1, i + left_size, inorder, p, q - 1)
-        right_node = self.tree(preorder, i + left_size + 1, j, inorder, q + 1, r)
-        root.left = left_node
-        root.right = right_node
-        return root
+        pass
 
 
 if __name__ == '__main__':
