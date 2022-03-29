@@ -21,32 +21,34 @@ from typing import List
 
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
-        hm = {}
-        for i in nums:
-            if i in hm:
-                hm[i] += 1
-            else:
-                hm[i] = 1
-        unique_num, counts = [], []
-        for num, count in hm.items():
-            unique_num.append(num)
-            counts.append(count)
-        self.backtrack(unique_num, counts, 0, [])
-        return self.result
+        #     hm = {}
+        #     for i in nums:
+        #         if i in hm:
+        #             hm[i] += 1
+        #         else:
+        #             hm[i] = 1
+        #     unique_num, counts = [], []
+        #     for num, count in hm.items():
+        #         unique_num.append(num)
+        #         counts.append(count)
+        #     self.backtrack(unique_num, counts, 0, [])
+        #     return self.result
+        #
+        # def __init__(self):
+        #     self.result = []
+        #
+        # def backtrack(self, unique_num, counts, k, path):
+        #     if k == len(unique_num):
+        #         self.result.append(path[:])
+        #         return
+        #     for count in range(counts[k] + 1):
+        #         for i in range(count):
+        #             path.append(unique_num[k])
+        #         self.backtrack(unique_num, counts, k + 1, path)
+        #         for i in range(count):
+        #             path.pop()
 
-    def __init__(self):
-        self.result = []
-
-    def backtrack(self, unique_num, counts, k, path):
-        if k == len(unique_num):
-            self.result.append(path[:])
-            return
-        for count in range(counts[k] + 1):
-            for i in range(count):
-                path.append(unique_num[k])
-            self.backtrack(unique_num, counts, k + 1, path)
-            for i in range(count):
-                path.pop()
+        pass
 
 
 if __name__ == '__main__':

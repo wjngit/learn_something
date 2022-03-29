@@ -49,53 +49,55 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
-        for i in range(9):
-            for j in range(9):
-                if board[i][j] != ".":
-                    data = int(board[i][j])
-                    self.rows[i][data] = True
-                    self.cols[j][data] = True
-                    self.blocks[i // 3][j // 3][data] = True
-        self.backtrack(board, 0, 0)
+        #     for i in range(9):
+        #         for j in range(9):
+        #             if board[i][j] != ".":
+        #                 data = int(board[i][j])
+        #                 self.rows[i][data] = True
+        #                 self.cols[j][data] = True
+        #                 self.blocks[i // 3][j // 3][data] = True
+        #     self.backtrack(board, 0, 0)
+        #
+        # def __init__(self):
+        #     self.solved = False
+        #     self.rows = [[None] * 10 for _ in range(9)]
+        #     self.cols = [[None] * 10 for _ in range(9)]
+        #     self.blocks = [[[None] * 10 for _ in range(3)] for _ in range(3)]
+        #
+        # def backtrack(self, board, row, col):
+        #     if row == 9:
+        #         self.solved = True
+        #         return
+        #     if board[row][col] != ".":
+        #         next_row = row
+        #         next_col = col + 1
+        #         if col == 8:
+        #             next_row = row + 1
+        #             next_col = 0
+        #         self.backtrack(board, next_row, next_col)
+        #         if self.solved:
+        #             return
+        #     else:
+        #         for num in range(1, 10):
+        #             if not self.rows[row][num] and not self.cols[col][num] and not self.blocks[row // 3][col // 3][num]:
+        #                 board[row][col] = str(num)
+        #                 self.rows[row][num] = True
+        #                 self.cols[col][num] = True
+        #                 self.blocks[row // 3][col // 3][num] = True
+        #                 next_row = row
+        #                 next_col = col + 1
+        #                 if col == 8:
+        #                     next_row = row + 1
+        #                     next_col = 0
+        #                 self.backtrack(board, next_row, next_col)
+        #                 if self.solved:
+        #                     return
+        #                 board[row][col] = "."
+        #                 self.rows[row][num] = False
+        #                 self.cols[col][num] = False
+        #                 self.blocks[row // 3][col // 3][num] = False
 
-    def __init__(self):
-        self.solved = False
-        self.rows = [[None] * 10 for _ in range(9)]
-        self.cols = [[None] * 10 for _ in range(9)]
-        self.blocks = [[[None] * 10 for _ in range(3)] for _ in range(3)]
-
-    def backtrack(self, board, row, col):
-        if row == 9:
-            self.solved = True
-            return
-        if board[row][col] != ".":
-            next_row = row
-            next_col = col + 1
-            if col == 8:
-                next_row = row + 1
-                next_col = 0
-            self.backtrack(board, next_row, next_col)
-            if self.solved:
-                return
-        else:
-            for num in range(1, 10):
-                if not self.rows[row][num] and not self.cols[col][num] and not self.blocks[row // 3][col // 3][num]:
-                    board[row][col] = str(num)
-                    self.rows[row][num] = True
-                    self.cols[col][num] = True
-                    self.blocks[row // 3][col // 3][num] = True
-                    next_row = row
-                    next_col = col + 1
-                    if col == 8:
-                        next_row = row + 1
-                        next_col = 0
-                    self.backtrack(board, next_row, next_col)
-                    if self.solved:
-                        return
-                    board[row][col] = "."
-                    self.rows[row][num] = False
-                    self.cols[col][num] = False
-                    self.blocks[row // 3][col // 3][num] = False
+        pass
 
 
 if __name__ == '__main__':

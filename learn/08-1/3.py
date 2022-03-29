@@ -35,23 +35,25 @@ mappings[9] = "wxyz"
 
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
-        if len(digits) == 0:
-            return self.result
-        path = [None] * len(digits)
-        self.backtrack(digits, mappings, 0, path)
-        return self.result
+        #     if len(digits) == 0:
+        #         return self.result
+        #     path = [None] * len(digits)
+        #     self.backtrack(digits, mappings, 0, path)
+        #     return self.result
+        #
+        # def __init__(self):
+        #     self.result = []
+        #
+        # def backtrack(self, digits, mappings, k, path):
+        #     if k == len(digits):
+        #         self.result.append("".join(path))
+        #         return
+        #     mapping = mappings[int(digits[k])]
+        #     for i in range(len(mapping)):
+        #         path[k] = mapping[i]
+        #         self.backtrack(digits, mappings, k + 1, path)
 
-    def __init__(self):
-        self.result = []
-
-    def backtrack(self, digits, mappings, k, path):
-        if k == len(digits):
-            self.result.append("".join(path))
-            return
-        mapping = mappings[int(digits[k])]
-        for i in range(len(mapping)):
-            path[k] = mapping[i]
-            self.backtrack(digits, mappings, k + 1, path)
+        pass
 
 
 if __name__ == '__main__':

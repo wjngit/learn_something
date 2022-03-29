@@ -22,20 +22,22 @@ from typing import List
 
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        self.backtrack(nums, 0, [])
-        return self.result
+        #     self.backtrack(nums, 0, [])
+        #     return self.result
+        #
+        # def __init__(self):
+        #     self.result = []
+        #
+        # def backtrack(self, nums, k, path):
+        #     if k == len(nums):
+        #         self.result.append(path[:])
+        #         return
+        #     self.backtrack(nums, k + 1, path)
+        #     path.append(nums[k])
+        #     self.backtrack(nums, k + 1, path)
+        #     path.pop()
 
-    def __init__(self):
-        self.result = []
-
-    def backtrack(self, nums, k, path):
-        if k == len(nums):
-            self.result.append(path[:])
-            return
-        self.backtrack(nums, k + 1, path)
-        path.append(nums[k])
-        self.backtrack(nums, k + 1, path)
-        path.pop()
+        pass
 
 
 if __name__ == '__main__':

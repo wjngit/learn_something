@@ -22,34 +22,36 @@ from typing import List
 
 class Solution:
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
-        hm = {}
-        for i in nums:
-            if i in hm:
-                hm[i] += 1
-            else:
-                hm[i] = 1
-        unique_num, counts = [], []
-        for num, count in hm.items():
-            unique_num.append(num)
-            counts.append(count)
-        self.backtrack(unique_num, counts, 0, [], len(nums))
-        return self.result
+        #     hm = {}
+        #     for i in nums:
+        #         if i in hm:
+        #             hm[i] += 1
+        #         else:
+        #             hm[i] = 1
+        #     unique_num, counts = [], []
+        #     for num, count in hm.items():
+        #         unique_num.append(num)
+        #         counts.append(count)
+        #     self.backtrack(unique_num, counts, 0, [], len(nums))
+        #     return self.result
+        #
+        # def __init__(self):
+        #     self.result = []
+        #
+        # def backtrack(self, unique_nums, counts, k, path, n):
+        #     if k == n:
+        #         self.result.append(path[:])
+        #         return
+        #     for i in range(len(unique_nums)):
+        #         if counts[i] == 0:
+        #             continue
+        #         path.append(unique_nums[i])
+        #         counts[i] -= 1
+        #         self.backtrack(unique_nums, counts, k + 1, path, n)
+        #         path.pop()
+        #         counts[i] += 1
 
-    def __init__(self):
-        self.result = []
-
-    def backtrack(self, unique_nums, counts, k, path, n):
-        if k == n:
-            self.result.append(path[:])
-            return
-        for i in range(len(unique_nums)):
-            if counts[i] == 0:
-                continue
-            path.append(unique_nums[i])
-            counts[i] -= 1
-            self.backtrack(unique_nums, counts, k + 1, path, n)
-            path.pop()
-            counts[i] += 1
+        pass
 
 
 if __name__ == '__main__':
