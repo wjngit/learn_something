@@ -45,10 +45,13 @@ class Solution:
         #     if total == n and len(path) == k:
         #         self.result.append(path[:])
         #         return
+        #     # if step > 9:
         #     if total > n or len(path) > k or step > 9:
         #         return
         #     self.backtrack(k, n, step + 1, total, path)
         #     path.append(step)
+        #     # if total + step <= n or len(path) <= k:
+        #     #     self.backtrack(k, n, step + 1, total + step, path)
         #     self.backtrack(k, n, step + 1, total + step, path)
         #     path.pop()
 

@@ -53,9 +53,12 @@ class Solution:
         #     if diff == 0:
         #         self.result.append(path[:])
         #         return
+        #     # if k == len(nums):
         #     if k == len(nums) or diff < 0:
         #         return
         #     for count in range(counts[k] + 1):
+        #         # if diff - nums[k] * count < 0:
+        #         #     continue
         #         for _ in range(count):
         #             path.append(nums[k])
         #         self.backtrack(nums, counts, k + 1, diff - nums[k] * count, path)

@@ -35,8 +35,7 @@ class Solution:
         #
         # def backtrack(self, s, k, step, path):
         #     if step == 4 and k == len(s):
-        #         sb = [str(item) for item in path]
-        #         self.result.append(".".join(sb))
+        #         self.result.append(".".join([str(item) for item in path]))
         #         return
         #     if step > 4:
         #         return
