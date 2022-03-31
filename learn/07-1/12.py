@@ -35,6 +35,7 @@ class TreeNode:
 
 class Solution:
     def pathSum(self, root: TreeNode, target: int) -> List[List[int]]:
+        #     # todo: 普通递归思想
         #     if not root:
         #         return self.result
         #     self.order(root, target, [], 0)
@@ -56,6 +57,33 @@ class Solution:
         #     if root.right:
         #         self.order(root.right, target, path, path_sum)
         #     path.pop()
+
+        pass
+
+        #     # todo: 回溯思想
+        #     if not root:
+        #         return self.result
+        #     self.order(root, target, [root.val], root.val)
+        #     return self.result
+        #
+        # def __init__(self):
+        #     self.result = []
+        #
+        # def order(self, root, target, path, path_sum):
+        #     if path_sum > target:
+        #         return
+        #     if not root.left and not root.right:
+        #         if path_sum == target:
+        #             self.result.append(path[:])
+        #         return
+        #     if root.left:
+        #         path.append(root.left.val)
+        #         self.order(root.left, target, path, path_sum + root.left.val)
+        #         path.pop()
+        #     if root.right:
+        #         path.append(root.right.val)
+        #         self.order(root.right, target, path, path_sum + root.right.val)
+        #         path.pop()
 
         pass
 
