@@ -1,7 +1,8 @@
 # 207. 课程表
 #
 # 你这个学期必须选修 numCourses 门课程，记为 0 到 numCourses - 1 。
-# 在选修某些课程之前需要一些先修课程。 先修课程按数组 prerequisites 给出，其中 prerequisites[i] = [ai, bi] ，表示如果要学习课程 ai 则 必须 先学习课程  bi 。
+# 在选修某些课程之前需要一些先修课程。 先修课程按数组 prerequisites 给出，
+# 其中 prerequisites[i] = [ai, bi] ，表示如果要学习课程 ai 则 必须 先学习课程  bi 。
 # 例如，先修课程对 [0, 1] 表示：想要学习课程 0 ，你需要先完成课程 1 。
 # 请你判断是否可能完成所有课程的学习？如果可以，返回 true ；否则，返回 false 。
 #
@@ -28,24 +29,27 @@ from typing import List
 
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        # adjs = [set() for i in range(numCourses)]
-        # indegrees = [0] * numCourses
+        # adj = [set() for _ in range(numCourses)]
+        # in_degree = [0] * numCourses
+        #
         # for i in range(len(prerequisites)):
-        #     adjs[prerequisites[i][1]].add(prerequisites[i][0])
-        #     indegrees[prerequisites[i][0]] += 1
-        # zeroInDegrees = set()
-        # for i in range(len(indegrees)):
-        #     if indegrees[i] == 0:
-        #         zeroInDegrees.add(i)
-        # zeroInDegreesCount = 0
-        # while zeroInDegrees:
-        #     coursei = zeroInDegrees.pop()
-        #     zeroInDegreesCount += 1
-        #     for coursej in adjs[coursei]:
-        #         indegrees[coursej] -= 1
-        #         if indegrees[coursej] == 0:
-        #             zeroInDegrees.add(coursej)
-        # return zeroInDegreesCount == numCourses
+        #     adj[prerequisites[i][1]].add(prerequisites[i][0])
+        #     in_degree[prerequisites[i][0]] += 1
+        #
+        # zero_in_degree = set()
+        # for i in range(len(in_degree)):
+        #     if in_degree[i] == 0:
+        #         zero_in_degree.add(i)
+        #
+        # zero_in_degrees_count = 0
+        # while zero_in_degree:
+        #     course_i = zero_in_degree.pop()
+        #     zero_in_degrees_count += 1
+        #     for course_j in adj[course_i]:
+        #         in_degree[course_j] -= 1
+        #         if in_degree[course_j] == 0:
+        #             zero_in_degree.add(course_j)
+        # return zero_in_degrees_count == numCourses
 
         pass
 

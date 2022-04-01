@@ -23,32 +23,29 @@ from typing import List
 
 class Solution:
     def pondSizes(self, land: List[List[int]]) -> List[int]:
-        #     self.n = len(land)
-        #     self.m = len(land[0])
+        #     m, n = len(land), len(land[0])
         #     result = []
-        #     for i in range(self.n):
-        #         for j in range(self.m):
+        #     for i in range(m):
+        #         for j in range(n):
         #             if land[i][j] == 0:
         #                 self.count = 0
-        #                 self.dfs(land, i, j)
+        #                 self.dfs(land, i, j, m, n)
         #                 result.append(self.count)
         #     result.sort()
         #     return result
         #
         # def __init__(self):
         #     self.count = 0
-        #     self.n = 0
-        #     self.m = 0
         #
-        # def dfs(self, land, i, j):
+        # def dfs(self, land, i, j, m, n):
         #     self.count += 1
         #     land[i][j] = 1
         #     dirs = [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, -1], [1, 1], [-1, 1], [1, -1]]
-        #     for d in range(8):
-        #         newi = i + dirs[d][0]
-        #         newj = j + dirs[d][1]
-        #         if newi >= 0 and newi < self.n and newj >= 0 and newj < self.m and land[newi][newj] == 0:
-        #             self.dfs(land, newi, newj)
+        #     for data in dirs:
+        #         new_i = i + data[0]
+        #         new_j = j + data[1]
+        #         if 0 <= new_i < m and 0 <= new_j < n and land[new_i][new_j] == 0:
+        #             self.dfs(land, new_i, new_j, m, n)
 
         pass
 

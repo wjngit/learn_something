@@ -32,36 +32,32 @@ from typing import List
 
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
-        #     self.exist_ = False
-        #     self.h = len(board)
-        #     self.w = len(board[0])
-        #     for i in range(self.h):
-        #         for j in range(self.w):
-        #             visited = [[False] * self.w for i in range(self.h)]
-        #             self.dfs(board, word, i, j, 0, visited)
-        #             if self.exist_:
-        #                 return self.exist_
-        #     return self.exist_
+        #     m, n = len(board), len(board[0])
+        #     for i in range(m):
+        #         for j in range(n):
+        #             visited = [[False] * n for _ in range(m)]
+        #             self.dfs(board, word, i, j, m, n, 0, visited)
+        #             if self.result:
+        #                 return True
+        #     return self.result
         #
         # def __init__(self):
-        #     self.h = 0
-        #     self.w = 0
+        #     self.result = False
         #
-        # def dfs(self, board, word, i, j, k, visited):
-        #     if self.exist_ == True:
+        # def dfs(self, board, word, i, j, m, n, k, visited):
+        #     if self.result:
         #         return
         #     if word[k] != board[i][j]:
         #         return
-        #     visited[i][j] = True
-        #     if k == (len(word) - 1):
-        #         self.exist_ = True
+        #     if k == len(word) - 1:
+        #         self.result = True
         #         return
-        #     directions = [[-1, 0], [1, 0], [0, -1], [0, 1]]
-        #     for d in range(4):
-        #         nexti = i + directions[d][0]
-        #         nextj = j + directions[d][1]
-        #         if nexti >= 0 and nexti < self.h and nextj >= 0 and nextj < self.w and not visited[nexti][nextj]:
-        #             self.dfs(board, word, nexti, nextj, k + 1, visited)
+        #     visited[i][j] = True
+        #     for data in [[-1, 0], [1, 0], [0, -1], [0, 1]]:
+        #         new_i = i + data[0]
+        #         new_j = j + data[1]
+        #         if 0 <= new_i < m and 0 <= new_j < n and not visited[new_i][new_j]:
+        #             self.dfs(board, word, new_i, new_j, m, n, k + 1, visited)
         #     visited[i][j] = False
 
         pass

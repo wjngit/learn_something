@@ -27,31 +27,30 @@ from typing import List
 class Solution:
     def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -> List[str]:
         #     self.dfs(beginWord, endWord, [], wordList)
-        #     return self.resultPath
+        #     return self.result
         #
         # def __init__(self):
         #     self.visited = set()
         #     self.found = False
-        #     self.resultPath = []
+        #     self.result = []
         #
-        # def dfs(self, curWord, endWord, path, wordList):
+        # def dfs(self, cur, end, path, word_list):
         #     if self.found:
         #         return
-        #
-        #     path.append(curWord)
-        #     self.visited.add(curWord)
-        #     if curWord == endWord:
-        #         self.resultPath.extend(path)
+        #     path.append(cur)
+        #     self.visited.add(cur)
+        #     if cur == end:
+        #         self.result.extend(path)
         #         self.found = True
         #         return
-        #     for i in range(len(wordList)):
-        #         nextWord = wordList[i]
-        #         if nextWord in self.visited or not self.isValidChange(curWord, nextWord):
+        #     for i in range(len(word_list)):
+        #         next_word = word_list[i]
+        #         if next_word in self.visited or not self.is_valid_change(cur, next_word):
         #             continue
-        #         self.dfs(nextWord, endWord, path, wordList)
-        #     path.pop()
+        #         self.dfs(next_word, end, path, word_list)
         #
-        # def isValidChange(self, word1, word2):
+        # @staticmethod
+        # def is_valid_change(word1, word2):
         #     diff = 0
         #     for i in range(len(word1)):
         #         if word1[i] != word2[i]:

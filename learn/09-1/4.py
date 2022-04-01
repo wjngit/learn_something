@@ -34,31 +34,27 @@ from typing import List
 
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-        #     self.h = len(grid)
-        #     self.w = len(grid[0])
-        #     self.visited = [[False] * self.w for i in range(self.h)]
-        #     for i in range(self.h):
-        #         for j in range(self.w):
-        #             if grid[i][j] == "1" and self.visited[i][j] != True:
+        #     m, n = len(grid), len(grid[0])
+        #     self.visited = [[False] * n for _ in range(m)]
+        #     for i in range(m):
+        #         for j in range(n):
+        #             if grid[i][j] == "1" and self.visited[i][j] is not True:
         #                 self.result += 1
-        #                 self.dfs(grid, i, j)
+        #                 self.dfs(grid, i, j, m, n)
         #     return self.result
         #
         # def __init__(self):
         #     self.visited = None
-        #     self.h = 0
-        #     self.w = 0
         #     self.result = 0
         #
-        # def dfs(self, grid, i, j):
-        #     directions = [[-1, 0], [1, 0], [0, -1], [0, 1]]
+        # def dfs(self, grid, i, j, m, n):
         #     self.visited[i][j] = True
-        #     for k in range(4):
-        #         newi = directions[k][0] + i
-        #         newj = directions[k][1] + j
-        #         if newi >= 0 and newi < self.h and newj >= 0 and newj < self.w and \
-        #                 self.visited[newi][newj] != True and grid[newi][newj] == "1":
-        #             self.dfs(grid, newi, newj)
+        #     for data in [[-1, 0], [1, 0], [0, -1], [0, 1]]:
+        #         new_i = data[0] + i
+        #         new_j = data[1] + j
+        #         if 0 <= new_i < m and 0 <= new_j < n and self.visited[new_i][new_j] is not True and \
+        #                 grid[new_i][new_j] == "1":
+        #             self.dfs(grid, new_i, new_j, m, n)
 
         pass
 

@@ -31,16 +31,16 @@ class Solution:
         # def dfs(self, i, j, m, n, k):
         #     self.visited[i][j] = True
         #     self.count += 1
-        #     directions = [[-1, 0], [0, 1], [1, 0], [0, -1]]
-        #     for di in directions:
-        #         newi = i + di[0]
-        #         newj = j + di[1]
-        #         if newi >= m or newi < 0 or newj >= n or newj < 0 or self.visited[newi][newj] or \
-        #                 self.check(newi, newj, k) == False:
+        #     for data in [[-1, 0], [0, 1], [1, 0], [0, -1]]:
+        #         new_i = i + data[0]
+        #         new_j = j + data[1]
+        #         if new_i >= m or new_i < 0 or new_j >= n or new_j < 0 or self.visited[new_i][new_j] or \
+        #                 self.check(new_i, new_j, k) is False:
         #             continue
-        #         self.dfs(newi, newj, m, n, k)
+        #         self.dfs(new_i, new_j, m, n, k)
         #
-        # def check(self, i, j, k):
+        # @staticmethod
+        # def check(i, j, k):
         #     total = 0
         #     while i > 0:
         #         total += i % 10

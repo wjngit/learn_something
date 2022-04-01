@@ -26,21 +26,19 @@ from typing import List
 
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
-        #     n = len(image)
-        #     m = len(image[0])
-        #     self.dfs(image, n, m, sr, sc, image[sr][sc], newColor)
+        #     m, n = len(image), len(image[0])
+        #     self.dfs(image, m, n, sr, sc, image[sr][sc], newColor)
         #     return image
         #
-        # def dfs(self, image, n, m, sr, sc, colour, newColor):
-        #     image[sr][sc] = newColor
-        #     dirs = [[-1, 0], [1, 0], [0, -1], [0, 1]]
-        #     for k in range(4):
-        #         newsr = sr + dirs[k][0]
-        #         newsc = sc + dirs[k][1]
-        #         if newsr >= n or newsr < 0 or newsc >= m or newsc < 0 or \
-        #                 image[newsr][newsc] == newColor or image[newsr][newsc] != colour:
+        # def dfs(self, image, m, n, sr, sc, colour, new_color):
+        #     image[sr][sc] = new_color
+        #     for data in [[-1, 0], [1, 0], [0, -1], [0, 1]]:
+        #         new_sr = sr + data[0]
+        #         new_sc = sc + data[1]
+        #         if new_sr >= m or new_sr < 0 or new_sc >= n or new_sc < 0 or \
+        #                 image[new_sr][new_sc] == newColor or image[new_sr][new_sc] != colour:
         #             continue
-        #         self.dfs(image, n, m, newsr, newsc, colour, newColor)
+        #         self.dfs(image, m, n, new_sr, new_sc, colour, newColor)
 
         pass
 

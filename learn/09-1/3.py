@@ -21,7 +21,7 @@ from typing import List
 
 class Solution:
     def findWhetherExistsPath(self, n: int, graph: List[List[int]], start: int, target: int) -> bool:
-        #     self.visted = [False] * n
+        #     self.visited = [False] * n
         #     self.adj = {i: set() for i in range(n)}
         #     for item in graph:
         #         self.adj[item[0]].add(item[1])
@@ -29,9 +29,9 @@ class Solution:
         #     return self.found
         #
         # def __init__(self):
-        #     self.visted = None
+        #     self.visited = None
         #     self.found = False
-        #     self.Hashset = set()
+        #     self.adj = None
         #
         # def dfs(self, cur, target):
         #     if self.found:
@@ -39,10 +39,10 @@ class Solution:
         #     if cur == target:
         #         self.found = True
         #         return
-        #     self.visted[cur] = True
-        #     for next in self.adj[cur]:
-        #         if not self.visted[next]:
-        #             self.dfs(next, target)
+        #     self.visited[cur] = True
+        #     for next_ in self.adj[cur]:
+        #         if not self.visited[next_]:
+        #             self.dfs(next_, target)
 
         pass
 

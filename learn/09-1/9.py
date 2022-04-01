@@ -37,46 +37,45 @@ from typing import List
 
 class Solution:
     def openLock(self, deadends: List[str], target: str) -> int:
-        #     deadset = set()
-        #     for d in deadends:
-        #         deadset.add(d)
-        #     if "0000" in deadset:
+        #     dead_set = set()
+        #     for data in deadends:
+        #         dead_set.add(data)
+        #     if "0000" in dead_set:
         #         return -1
-        #     visited = set()
-        #     queue = ["0000"]
-        #     visited.add("0000")
+        #     visited = {"0000"}
+        #     q = ["0000"]
         #     depth = 0
-        #     while queue:
-        #         size = len(queue)
+        #     while q:
+        #         size = len(q)
         #         k = 0
         #         while k < size:
-        #             node = queue.pop(0)
+        #             node = q.pop(0)
         #             k += 1
         #             if node == target:
         #                 return depth
-        #             newNodes = self.genNewNode(node)
-        #             for newNode in newNodes:
-        #                 if newNode in visited or newNode in deadset:
+        #             new_nodes = self.get_new_node(node)
+        #             for new_node in new_nodes:
+        #                 if new_node in visited or new_node in dead_set:
         #                     continue
-        #                 queue.append(newNode)
-        #                 visited.add(newNode)
+        #                 q.append(new_node)
+        #                 visited.add(new_node)
         #         depth += 1
         #     return -1
         #
-        # def genNewNode(self, node):
-        #     newnodes = []
+        # @staticmethod
+        # def get_new_node(node):
+        #     new_nodes = []
         #     change = [-1, 1]
         #     for i in range(4):
-        #         for k in range(2):
-        #             newNode = [None] * 4
-        #             for j in range(i):
-        #                 newNode[j] = node[j]
-        #             for j in range(i + 1, 4):
-        #                 newNode[j] = node[j]
-        #             newC = str((int(node[i]) + change[k] + 10) % 10)
-        #             newNode[i] = newC
-        #             newnodes.append("".join(newNode))
-        #     return newnodes
+        #         for j in range(2):
+        #             new_node = [""] * 4
+        #             for k in range(i):
+        #                 new_node[k] = node[k]
+        #             for m in range(i + 1, 4):
+        #                 new_node[m] = node[m]
+        #             new_node[i] = str((int(node[i]) + change[j] + 10) % 10)
+        #             new_nodes.append("".join(new_node))
+        #     return new_nodes
 
         pass
 

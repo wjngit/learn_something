@@ -43,19 +43,19 @@ class Solution:
         #     self.visited = None
         #     self.reached = False
         #
-        # def dfs(self, arr, curi):
+        # def dfs(self, arr, cur):
         #     if self.reached:
         #         return
-        #     if arr[curi] == 0:
+        #     if arr[cur] == 0:
         #         self.reached = True
         #         return
-        #     self.visited[curi] = True
-        #     move2left = curi - arr[curi]
-        #     if move2left >= 0 and move2left < len(arr) and self.visited[move2left] == False:
-        #         self.dfs(arr, move2left)
-        #     move2right = curi + arr[curi]
-        #     if move2right >= 0 and move2right < len(arr) and self.visited[move2right] == False:
-        #         self.dfs(arr, move2right)
+        #     self.visited[cur] = True
+        #     move_left = cur - arr[cur]
+        #     if 0 <= move_left < len(arr) and self.visited[move_left] == False:
+        #         self.dfs(arr, move_left)
+        #     move_right = cur + arr[cur]
+        #     if 0 <= move_right < len(arr) and self.visited[move_right] == False:
+        #         self.dfs(arr, move_right)
 
         pass
 
