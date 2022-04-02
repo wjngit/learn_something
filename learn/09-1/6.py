@@ -32,12 +32,12 @@ class Solution:
         # adj = [set() for _ in range(numCourses)]
         # in_degree = [0] * numCourses
         #
-        # for i in range(len(prerequisites)):
-        #     adj[prerequisites[i][1]].add(prerequisites[i][0])
-        #     in_degree[prerequisites[i][0]] += 1
+        # for data in prerequisites:
+        #     adj[data[1]].add(data[0])
+        #     in_degree[data[0]] += 1
         #
         # zero_in_degree = set()
-        # for i in range(len(in_degree)):
+        # for i in range(numCourses):
         #     if in_degree[i] == 0:
         #         zero_in_degree.add(i)
         #
@@ -59,10 +59,15 @@ if __name__ == '__main__':
     prerequisites1 = [[1, 0]]
     numCourses2 = 2
     prerequisites2 = [[1, 0], [0, 1]]
+    numCourses3 = 5
+    prerequisites3 = [[0, 1], [0, 3], [1, 2], [2, 4], [2, 3]]
 
     s1 = Solution()
     s2 = Solution()
+    s3 = Solution()
+    r3 = s2.canFinish(numCourses3, prerequisites3)
     r1 = s1.canFinish(numCourses1, prerequisites1)
     r2 = s2.canFinish(numCourses2, prerequisites2)
     print(r1)
     print(r2)
+    print(r3)

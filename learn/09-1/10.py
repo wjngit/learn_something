@@ -48,6 +48,7 @@ class Solution:
         #         if next_word in self.visited or not self.is_valid_change(cur, next_word):
         #             continue
         #         self.dfs(next_word, end, path, word_list)
+        #     path.pop()
         #
         # @staticmethod
         # def is_valid_change(word1, word2):

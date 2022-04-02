@@ -22,7 +22,7 @@ from typing import List
 class Solution:
     def findWhetherExistsPath(self, n: int, graph: List[List[int]], start: int, target: int) -> bool:
         #     self.visited = [False] * n
-        #     self.adj = {i: set() for i in range(n)}
+        #     self.adj = [set() for _ in range(n)]
         #     for item in graph:
         #         self.adj[item[0]].add(item[1])
         #     self.dfs(start, target)

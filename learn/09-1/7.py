@@ -49,10 +49,10 @@ class Solution:
         #         return
         #     if word[k] != board[i][j]:
         #         return
+        #     visited[i][j] = True
         #     if k == len(word) - 1:
         #         self.result = True
         #         return
-        #     visited[i][j] = True
         #     for data in [[-1, 0], [1, 0], [0, -1], [0, 1]]:
         #         new_i = i + data[0]
         #         new_j = j + data[1]
