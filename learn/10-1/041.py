@@ -2,7 +2,7 @@
 
 def knapsack11(weight: list, value: list, n: int, w: int):
     # dp二维数组（每个阶段决策物品是否装入背包之后的价值）
-    dp = [[-1] * (w + 1) for _ in range(n)]
+    dp = [[float('-inf')] * (w + 1) for _ in range(n)]
     # 初始化第一行
     dp[0][0] = 0
     if weight[0] <= w:

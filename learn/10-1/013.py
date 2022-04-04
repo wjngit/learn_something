@@ -2,7 +2,7 @@
 
 def knapsack13(weight: list, n: int, w: int):
     # dp二维数组（2^23-1表示初始化值，要不同于0与1，每个阶段对应最小物品个数）
-    dp = [[2 ** 23 - 1] * (w + 1) for _ in range(n)]
+    dp = [[float('inf')] * (w + 1) for _ in range(n)]
     # 初始化第一行
     dp[0][0] = 0
     if weight[0] <= w:
@@ -14,7 +14,7 @@ def knapsack13(weight: list, n: int, w: int):
             else:
                 dp[i][j] = min(dp[i - 1][j], dp[i - 1][j - weight[i]] + 1)
     # 背包不能装满
-    if dp[n - 1][w] == 2 ** 23 - 1:
+    if dp[n - 1][w] == float('inf'):
         return -1
     return dp[n - 1][w]
 

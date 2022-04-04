@@ -2,17 +2,17 @@
 
 def knapsack23(weight: list, n: int, w: int):
     # dp二维数组（一个物品怎么装入背包，装0个，1个……k个）
-    dp = [[2 ** 23 - 1] * (w + 1) for _ in range(n)]
+    dp = [[float('inf')] * (w + 1) for _ in range(n)]
     # 初始化第一行
     for i in range(w // weight[0] + 1):
         dp[0][i * weight[0]] = i
     for i in range(1, n):
         for j in range(w + 1):
             for c in range(j // weight[i] + 1):
-                if dp[i - 1][j - c * weight[i]] != 2 ** 23 - 1 and dp[i - 1][j - c * weight[i]] + c < dp[i][j]:
+                if dp[i - 1][j - c * weight[i]] != float('inf') and dp[i - 1][j - c * weight[i]] + c < dp[i][j]:
                     dp[i][j] = dp[i - 1][j - c * weight[i]] + c
     # 背包不能装满
-    if dp[n - 1][w] == 2 ** 23 - 1:
+    if dp[n - 1][w] == float('inf'):
         return -1
     return dp[n - 1][w]
 
