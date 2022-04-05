@@ -33,10 +33,12 @@ class Solution:
         #     dp[0][nums[0]] = True
         # for i in range(1, n):
         #     for j in range(target + 1):
-        #         if j - nums[i] >= 0:
-        #             dp[i][j] = dp[i - 1][j] or dp[i - 1][j - nums[i]]
-        #         else:
-        #             dp[i][j] = dp[i - 1][j]
+        #         # if j - nums[i] >= 0:
+        #         #     dp[i][j] = dp[i - 1][j] or dp[i - 1][j - nums[i]]
+        #         # else:
+        #         #     dp[i][j] = dp[i - 1][j]
+        #         if dp[i - 1][j] is True or (j - nums[i] >= 0 and dp[i - 1][j - nums[i]] is True):
+        #             dp[i][j] = True
         # return dp[n - 1][target]
 
         pass
