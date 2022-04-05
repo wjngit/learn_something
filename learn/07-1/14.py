@@ -59,6 +59,27 @@ class Solution:
 
         pass
 
+        #     self.dfs(root, [], targetSum)
+        #     return self.count
+        #
+        # def __init__(self):
+        #     self.count = 0
+        #
+        # def dfs(self, root, path, targetSum):
+        #     if not root:
+        #         return
+        #     path.append(root.val)
+        #     curSum = 0
+        #     for i in range(len(path) - 1, -1, -1):
+        #         curSum += path[i]
+        #         if curSum == targetSum:
+        #             self.count += 1
+        #     self.dfs(root.left, path, targetSum)
+        #     self.dfs(root.right, path, targetSum)
+        #     path.pop()
+
+        pass
+
 
 if __name__ == '__main__':
     pass
