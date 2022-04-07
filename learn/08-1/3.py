@@ -22,15 +22,15 @@
 
 from typing import List
 
-mappings = [""] * 10
-mappings[2] = "abc"
-mappings[3] = "def"
-mappings[4] = "ghi"
-mappings[5] = "jkl"
-mappings[6] = "mno"
-mappings[7] = "pqrs"
-mappings[8] = "tuv"
-mappings[9] = "wxyz"
+# mappings = [""] * 10
+# mappings[2] = "abc"
+# mappings[3] = "def"
+# mappings[4] = "ghi"
+# mappings[5] = "jkl"
+# mappings[6] = "mno"
+# mappings[7] = "pqrs"
+# mappings[8] = "tuv"
+# mappings[9] = "wxyz"
 
 
 class Solution:
