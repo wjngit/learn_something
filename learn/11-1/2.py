@@ -28,16 +28,18 @@ from typing import List
 
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        k = len(coins)
-        dp = [float("inf")] * (amount + 1)
-        dp[0] = 0
-        for i in range(1, amount + 1):
-            for j in range(k):
-                if i - coins[j] >= 0 and dp[i - coins[j]] != float("inf") and dp[i - coins[j]] + 1 < dp[i]:
-                    dp[i] = dp[i - coins[j]] + 1
-        if dp[amount] == float("inf"):
-            return -1
-        return dp[amount]
+        # k = len(coins)
+        # dp = [float("inf")] * (amount + 1)
+        # dp[0] = 0
+        # for i in range(1, amount + 1):
+        #     for j in range(k):
+        #         if i - coins[j] >= 0 and dp[i - coins[j]] != float("inf") and dp[i - coins[j]] + 1 < dp[i]:
+        #             dp[i] = dp[i - coins[j]] + 1
+        # if dp[amount] == float("inf"):
+        #     return -1
+        # return dp[amount]
+
+        pass
 
 
 if __name__ == '__main__':
