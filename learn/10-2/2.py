@@ -37,8 +37,8 @@ class Solution:
         # offset = 1000
         # w = 2000
         # dp = [[0] * (w + 1) for _ in range(n)]
-        # dp[0][offset - nums[0]] += 1
-        # dp[0][offset + nums[0]] += 1
+        # dp[0][offset - nums[0]] = 1
+        # dp[0][offset + nums[0]] += 1  # 这里要用 +=，num[0]可能为0
         # for i in range(1, n):
         #     for j in range(w + 1):
         #         if 0 <= j - nums[i] <= w:
