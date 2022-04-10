@@ -28,35 +28,40 @@ from typing import List
 
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
-        n, m = len(s), len(p)
-        if m > n:
-            return []
-        needs = [0] * 26
-        for i in range(m):
-            needs[ord(p[i]) - ord("a")] += 1
-        matched = [0] * 26
-        startp = 0
-        endp = 0
-        result = []
-        while endp < m:
-            matched[ord(s[endp]) - ord("a")] += 1
-            endp += 1
-        if self.same(needs, matched):
-            result.append(startp)
-        while endp < n and startp < n:
-            matched[ord(s[startp]) - ord("a")] -= 1
-            matched[ord(s[endp]) - ord("a")] += 1
-            startp += 1
-            endp += 1
-            if self.same(needs, matched):
-                result.append(startp)
-        return result
+        #     m, n = len(s), len(p)
+        #     if n > m:
+        #         return []
+        #
+        #     counts = [0] * 26
+        #     for i in range(n):
+        #         counts[ord(p[i]) - ord("a")] += 1
+        #
+        #     matched = [0] * 26
+        #     start_p, end_p = 0, 0
+        #     result = []
+        #     while end_p < n:
+        #         matched[ord(s[end_p]) - ord("a")] += 1
+        #         end_p += 1
+        #
+        #     if self.same(counts, matched):
+        #         result.append(start_p)
+        #
+        #     while end_p < m and start_p < m:
+        #         matched[ord(s[start_p]) - ord("a")] -= 1
+        #         matched[ord(s[end_p]) - ord("a")] += 1
+        #         start_p += 1
+        #         end_p += 1
+        #         if self.same(counts, matched):
+        #             result.append(start_p)
+        #     return result
+        #
+        # def same(self, counts, matched):
+        #     for i in range(len(counts)):
+        #         if counts[i] != matched[i]:
+        #             return False
+        #     return True
 
-    def same(self, needs, matched):
-        for i in range(len(needs)):
-            if needs[i] != matched[i]:
-                return False
-        return True
+        pass
 
 
 if __name__ == '__main__':

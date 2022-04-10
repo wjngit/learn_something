@@ -23,24 +23,27 @@
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        n = len(s)
-        if n == 0:
-            return 0
-        p, q = 0, 0
-        record = set()
-        max_len = 0
-        while q < n:
-            c = s[q]
-            if c not in record:
-                record.add(c)
-                q += 1
-                if q - p > max_len:
-                    max_len = q - p
-                continue
-            while c in record:
-                record.remove(s[p])
-                p += 1
-        return max_len
+        # n = len(s)
+        # if n == 0:
+        #     return 0
+        # p, q = 0, 0
+        # record = []
+        # max_len = 0
+        # while q < n:
+        #     c = s[q]
+        #     if c not in record:
+        #         record.append(c)
+        #         q += 1
+        #         if q - p > max_len:
+        #             max_len = q - p
+        #         continue
+        #     # 直到这个重复的被删掉才停止
+        #     while c in record:
+        #         record.pop(0)
+        #         p += 1
+        # return max_len
+
+        pass
 
 
 if __name__ == '__main__':

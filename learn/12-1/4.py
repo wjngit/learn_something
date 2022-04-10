@@ -15,23 +15,25 @@ from typing import List
 
 class Solution:
     def findClosest(self, words: List[str], word1: str, word2: str) -> int:
-        w1ps, w2ps = [], []
-        for i in range(len(words)):
-            if words[i] == word1:
-                w1ps.append(i)
-            elif words[i] == word2:
-                w2ps.append(i)
-        p1, p2 = 0, 0
-        temp = float("inf")
-        while p1 < len(w1ps) and p2 < len(w2ps):
-            pos1, pos2 = w1ps[p1], w2ps[p2]
-            if pos1 > pos2:
-                temp = min(temp, pos1 - pos2)
-                p2 += 1
-            else:
-                temp = min(temp, pos2 - pos1)
-                p1 += 1
-        return temp
+        # w1ps, w2ps = [], []
+        # for i in range(len(words)):
+        #     if words[i] == word1:
+        #         w1ps.append(i)
+        #     elif words[i] == word2:
+        #         w2ps.append(i)
+        # p1, p2 = 0, 0
+        # temp = float("inf")
+        # while p1 < len(w1ps) and p2 < len(w2ps):
+        #     pos1, pos2 = w1ps[p1], w2ps[p2]
+        #     if pos1 > pos2:
+        #         temp = min(temp, pos1 - pos2)
+        #         p2 += 1
+        #     else:
+        #         temp = min(temp, pos2 - pos1)
+        #         p1 += 1
+        # return temp
+
+        pass
 
 
 if __name__ == '__main__':
