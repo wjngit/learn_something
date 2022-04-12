@@ -78,6 +78,7 @@ def travel(head):
 
 pass
 
+
 # # 冒泡排序
 # def bubble_sort(data):
 #     n = len(data)
@@ -112,19 +113,33 @@ pass
 #     return new_head.next
 #
 #
-# if __name__ == '__main__':
-#     a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
-#     print(a_list, "*" * 5)
-#     a1_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     bubble_sort(a1_list)
-#     print(a1_list)
-#
-#     a2_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     head = create(a2_list)
-#     h1 = bubble_sort_link(head)
-#     print([i for i in travel(h1)], "^" * 10)
+
+def bubble_sort(data):
+    n = len(data)
+    for i in range(n - 1):
+        for j in range(n - 1 - i):
+            if data[j] > data[j + 1]:
+                data[j], data[j + 1] = data[j + 1], data[j]
+
+
+def bubble_sort_link(head):
+    pass
+
+
+if __name__ == '__main__':
+    a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
+    print(a_list, "*" * 5)
+    a1_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    bubble_sort(a1_list)
+    print(a1_list)
+
+    a2_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    head = create(a2_list)
+    h1 = bubble_sort_link(head)
+    print([i for i in travel(h1)], "^bubble_sort_link" * 10)
 
 pass
+
 
 # # 插入排序
 # def insert_sort(data):
@@ -153,19 +168,32 @@ pass
 #     return new_head.next
 #
 #
-# if __name__ == '__main__':
-#     a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
-#     print(a_list, "*" * 5)
-#     a1_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     insert_sort(a1_list)
-#     print(a1_list)
-#
-#     a2_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     head = create(a2_list)
-#     h1 = insert_sort_link(head)
-#     print([i for i in travel(h1)], "^" * 10)
+def insert_sort(data):
+    n = len(data)
+    for i in range(1, n):
+        for j in range(i, 0, -1):
+            if data[j] < data[j - 1]:
+                data[j], data[j - 1] = data[j - 1], data[j]
+
+
+def insert_sort_link(head):
+    pass
+
+
+if __name__ == '__main__':
+    a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
+    print(a_list, "*" * 5)
+    a1_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    insert_sort(a1_list)
+    print(a1_list)
+
+    a2_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    head = create(a2_list)
+    h1 = insert_sort_link(head)
+    print([i for i in travel(h1)], "^insert_sort_link" * 10)
 
 pass
+
 
 # # 选择排序
 # def select_sort(data):
@@ -197,19 +225,35 @@ pass
 #     return head
 #
 #
-# if __name__ == '__main__':
-#     a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
-#     print(a_list, "*" * 5)
-#     a1_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     select_sort(a1_list)
-#     print(a1_list)
-#
-#     a2_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     head = create(a2_list)
-#     h1 = select_sort_link(head)
-#     print([i for i in travel(h1)], "^" * 10)
+def select_sort(data):
+    n = len(data)
+    for i in range(n - 1):
+        min_ = i
+        for j in range(i, n - 1):
+            if data[min_] > data[j + 1]:
+                min_ = j + 1
+        if min_ != i:
+            data[min_], data[i] = data[i], data[min_]
+
+
+def select_sort_link(head):
+    pass
+
+
+if __name__ == '__main__':
+    a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
+    print(a_list, "*" * 5)
+    a1_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    select_sort(a1_list)
+    print(a1_list)
+
+    a2_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    head = create(a2_list)
+    h1 = select_sort_link(head)
+    print([i for i in travel(h1)], "^select_sort_link" * 10)
 
 pass
+
 
 # # 归并排序
 # def merge_sort(data):
@@ -396,28 +440,45 @@ pass
 #         return n
 #
 #
-# if __name__ == '__main__':
-#     a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
-#     print(a_list, "*" * 5)
-#     a11_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     a12_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     merge_sort = MergeSort()
-#     merge_sort.merge_sort1(a11_list)
-#     merge_sort.merge_sort2(a12_list)
-#     print(a11_list, "111")
-#     print(a12_list, "222")
-#
-#     a21_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     a22_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     head1 = create(a21_list)
-#     head2 = create(a22_list)
-#     merge_sort_link = MergeSortLink()
-#     h1 = merge_sort_link.merge_sort1(head1)
-#     h2 = merge_sort_link.merge_sort2(head2)
-#     print([i for i in travel(h1)], "^" * 10)
-#     print([i for i in travel(h2)], "^" * 10)
+class MergeSort:
+    def merge_sort1(self, data):
+        pass
+
+    def merge_sort2(self, data):
+        pass
+
+
+class MergeSortLink:
+    def merge_sort1(self, head):
+        pass
+
+    def merge_sort2(self, head):
+        pass
+
+
+if __name__ == '__main__':
+    a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
+    print(a_list, "*" * 5)
+    a11_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    a12_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    merge_sort = MergeSort()
+    merge_sort.merge_sort1(a11_list)
+    print(a11_list, "111merge_sort")
+    merge_sort.merge_sort2(a12_list)
+    print(a12_list, "222merge_sort")
+
+    a21_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    a22_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    head1 = create(a21_list)
+    head2 = create(a22_list)
+    merge_sort_link = MergeSortLink()
+    h1 = merge_sort_link.merge_sort1(head1)
+    print([i for i in travel(h1)], "^merge_sort_link111" * 10)
+    h2 = merge_sort_link.merge_sort2(head2)
+    print([i for i in travel(h2)], "^merge_sort_link222" * 10)
 
 pass
+
 
 # # 快速排序
 # def quick_sort(data, start, end):
@@ -557,26 +618,43 @@ pass
 #                 self.stack.append(end)
 #
 #
-# if __name__ == '__main__':
-#     a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
-#     print(a_list, "*" * 5)
-#     a11_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     a12_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     quick_sort = QuickSort()
-#     quick_sort.quick_sort1(a11_list)
-#     quick_sort.quick_sort2(a12_list)
-#     print(a11_list, "111")
-#     print(a12_list, "222")
-#
-#     a21_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     a22_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
-#     head1 = create(a21_list)
-#     head2 = create(a22_list)
-#     quick_sort_link = QuickSortLink()
-#     h1 = quick_sort_link.quick_sort1(head1)
-#     h2 = quick_sort_link.quick_sort2(head2)
-#     print([i for i in travel(h1)], "^" * 10)
-#     print([i for i in travel(h2)], "^" * 10)
+
+class QuickSort:
+    def quick_sort1(self, data):
+        pass
+
+    def quick_sort2(self, data):
+        pass
+
+
+class QuickSortLink:
+    def quick_sort1(self, head):
+        pass
+
+    def quick_sort2(self, head):
+        pass
+
+
+if __name__ == '__main__':
+    a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
+    print(a_list, "*" * 5)
+    a11_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    a12_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    quick_sort = QuickSort()
+    quick_sort.quick_sort1(a11_list)
+    print(a11_list, "111quick_sort1")
+    quick_sort.quick_sort2(a12_list)
+    print(a12_list, "222quick_sort2")
+
+    a21_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    a22_list = [54, 26, 77, 93, 17, 77, 31, 44, 55, 20, 77]
+    head1 = create(a21_list)
+    head2 = create(a22_list)
+    quick_sort_link = QuickSortLink()
+    h1 = quick_sort_link.quick_sort1(head1)
+    print([i for i in travel(h1)], "^quick_sort_link111" * 10)
+    h2 = quick_sort_link.quick_sort2(head2)
+    print([i for i in travel(h2)], "^quick_sort_link222" * 10)
 
 pass
 

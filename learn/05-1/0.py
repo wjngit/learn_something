@@ -60,29 +60,33 @@ def b_search(data, target):
     return -1
 
 
-# 递归实现二分查找
-def b2_search(data, target):
-    return func(data, 0, len(data), target)
-
-
-def func(data, low, high, target):
-    if low > high:
-        return -1
-    mid = low + (high - low) // 2
-    if data[mid] == target:
-        if mid == 0 or data[mid - 1] != target:
-            return mid
-        return func(data, low, mid - 1, target)
-    if data[mid] < target:
-        return func(data, mid + 1, high, target)
-    return func(data, low, mid - 1, target)
+# # 递归实现二分查找
+# def b2_search(data, target):
+#     return func(data, 0, len(data), target)
+#
+#
+# def func(data, low, high, target):
+#     if low > high:
+#         return -1
+#     mid = low + (high - low) // 2
+#     if data[mid] == target:
+#         if mid == 0 or data[mid - 1] != target:
+#             return mid
+#         return func(data, low, mid - 1, target)
+#     if data[mid] < target:
+#         return func(data, mid + 1, high, target)
+#     return func(data, low, mid - 1, target)
 
 
 if __name__ == '__main__':
     a_list = [17, 20, 26, 31, 44, 54, 55, 77, 77, 77, 93]
     print(a_list, "*" * 5)
-    print(b2_search(a_list, 13))
-    print(b2_search(a_list, 77))
-    print(b2_search(a_list, 31))
-    print(b2_search(a_list, 93))
+    # print(b2_search(a_list, 13))
+    # print(b2_search(a_list, 77))
+    # print(b2_search(a_list, 31))
+    # print(b2_search(a_list, 93))
+    print(b_search(a_list, 13))
+    print(b_search(a_list, 77))
+    print(b_search(a_list, 31))
+    print(b_search(a_list, 93))
     print('-' * 50)
