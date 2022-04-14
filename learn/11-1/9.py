@@ -29,6 +29,7 @@ from typing import List
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
         # n = len(nums)
+        # 以nums[i]为结尾的最长递增子序列
         # dp = [0] * n
         # dp[0] = 1
         # for i in range(1, n):
