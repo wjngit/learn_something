@@ -12,8 +12,16 @@
 #     m *= 2
 # 复杂度logn
 
-diff = ord("a") - ord("A")
-print(diff)
-s = "M"
-res = chr(ord(s) + diff)
-print(res)
+# diff = ord("a") - ord("A")
+# print(diff)
+# s = "M"
+# res = chr(ord(s) + diff)
+# print(res)
+
+"""
+给定一个字符串表示IP地址，比如”192.92.4.3“，判断其合法性。合法ip地址规则如下：
+a.除了空格、数字和 . 之外，不得包含其他字符；
+b.IP地址由四个数字构成，由 . 分隔，每个 . 隔开的数字大小在0~255之间；
+c.数字前后可以有空格，但中间不能有空格
+d.每个数字不能有前导0，但是可以为0
+"""
