@@ -27,60 +27,60 @@ d.每个数字不能有前导0，但是可以为0
 """
 
 
-def check(ip: str):
-    if not ip:
-        return False
-    ip_segments = ip.split('.')
-    if len(ip_segments) != 4:
-        return False
-    for i in range(4):
-        if check_segment(ip_segments[i]) is False:
+class Solution:
+    def check(self, ip: str):
+        if not ip:
             return False
-    return True
+        ip_segments = ip.split('.')
+        if len(ip_segments) != 4:
+            return False
+        for i in range(4):
+            if self.check_segment(ip_segments[i]) is False:
+                return False
+        return True
 
-
-def check_segment(ip_segment):
-    # 前导空格判断
-    n = len(ip_segment)
-    i = 0
-    while i < n and ip_segment[i] == ' ':
-        i += 1
-    if i == n:
-        return False
-
-    # 转化为数字及条件判断
-    num = 0
-    front_is_zero, flag = False, False
-    while i < n and ip_segment[i] != ' ':
-        c = ip_segment[i]
-        # 非数字判断
-        if c < '0' or c > '9':
+    @staticmethod
+    def check_segment(ip_segment):
+        # 前导空格判断
+        n = len(ip_segment)
+        i = 0
+        while i < n and ip_segment[i] == ' ':
+            i += 1
+        if i == n:
             return False
 
-        # 前导0的判断
-        if flag is False:
-            flag = True
-            if c == '0':
-                front_is_zero = True
-        else:
-            if c != '0' and front_is_zero is True:
+        # 转化为数字及条件判断
+        num = 0
+        front_is_zero, flag = False, False
+        while i < n and ip_segment[i] != ' ':
+            c = ip_segment[i]
+            # 非数字判断
+            if c < '0' or c > '9':
                 return False
 
-        # 大于255判断
-        num = num * 10 + int(c)
-        if num > 255:
-            return False
+            # 前导0的判断
+            if flag is False:
+                flag = True
+                if c == '0':
+                    front_is_zero = True
+            else:
+                if c != '0' and front_is_zero is True:
+                    return False
 
-        i += 1
+            # 大于255判断
+            num = num * 10 + int(c)
+            if num > 255:
+                return False
 
-    # 后置空格处理
-    while i < n:
-        c = ip_segment[i]
-        if c != ' ':
-            return False
-        i += 1
+            i += 1
 
-    return True
+        # 后置空格处理
+        while i < n:
+            if ip_segment[i] != ' ':
+                return False
+            i += 1
+
+        return True
 
 
 if __name__ == '__main__':
@@ -94,12 +94,13 @@ if __name__ == '__main__':
     t8 = ''
     t9 = ' 123. 09 .2 .1'
 
-    print(check(t1))
-    print(check(t2))
-    print(check(t3))
-    print(check(t4))
-    print(check(t5))
-    print(check(t6))
-    print(check(t7))
-    print(check(t8))
-    print(check(t9))
+    s = Solution()
+    print(s.check(t1))
+    print(s.check(t2))
+    print(s.check(t3))
+    print(s.check(t4))
+    print(s.check(t5))
+    print(s.check(t6))
+    print(s.check(t7))
+    print(s.check(t8))
+    print(s.check(t9))
