@@ -48,6 +48,51 @@ class Solution:
 
         pass
 
+        #     s_list = list(s)
+        #     n = self.trim(s_list)
+        #     if n == 0:
+        #         return ''
+        #     self.reverse(s_list, 0, n - 1)
+        #     p = 0
+        #     while p < n:
+        #         r = p
+        #         while r < n and s_list[r] != ' ':
+        #             r += 1
+        #         self.reverse(s_list, p, r - 1)
+        #         p = r + 1
+        #     new_list = [''] * n
+        #     i = 0
+        #     while i < n:
+        #         new_list[i] = s_list[i]
+        #         i += 1
+        #     return ''.join(new_list)
+        #
+        # def trim(self, s):
+        #     n = len(s)
+        #     i = 0
+        #     k = 0
+        #     while i < n and s[i] == ' ':
+        #         i += 1
+        #     while i < n:
+        #         if s[i] == ' ':
+        #             if i + 1 < n and s[i + 1] != ' ':
+        #                 s[k] = ' '
+        #                 k += 1
+        #         else:
+        #             s[k] = s[i]
+        #             k += 1
+        #         i += 1
+        #     return k
+        #
+        # def reverse(self, s, p, r):
+        #     mid = (p + r) // 2
+        #     i = p
+        #     while i <= mid:
+        #         s[i], s[r - (i - p)] = s[r - (i - p)], s[i]
+        #         i += 1
+
+        pass
+
 
 if __name__ == '__main__':
     s1 = "the sky is blue"
