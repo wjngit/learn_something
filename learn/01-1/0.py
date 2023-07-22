@@ -29,58 +29,60 @@ d.每个数字不能有前导0，但是可以为0
 
 class Solution:
     def check(self, ip: str):
-        if not ip:
-            return False
-        ip_segments = ip.split('.')
-        if len(ip_segments) != 4:
-            return False
-        for i in range(4):
-            if self.check_segment(ip_segments[i]) is False:
-                return False
-        return True
+        #     if not ip:
+        #         return False
+        #     ip_segments = ip.split('.')
+        #     if len(ip_segments) != 4:
+        #         return False
+        #     for i in range(4):
+        #         if self.check_segment(ip_segments[i]) is False:
+        #             return False
+        #     return True
+        #
+        # @staticmethod
+        # def check_segment(ip_segment):
+        #     # 前导空格判断
+        #     n = len(ip_segment)
+        #     i = 0
+        #     while i < n and ip_segment[i] == ' ':
+        #         i += 1
+        #     if i == n:
+        #         return False
+        #
+        #     # 转化为数字及条件判断
+        #     num = 0
+        #     front_is_zero, flag = False, False
+        #     while i < n and ip_segment[i] != ' ':
+        #         c = ip_segment[i]
+        #         # 非数字判断
+        #         if c < '0' or c > '9':
+        #             return False
+        #
+        #         # 前导0的判断
+        #         if flag is False:
+        #             flag = True
+        #             if c == '0':
+        #                 front_is_zero = True
+        #         else:
+        #             if c != '0' and front_is_zero is True:
+        #                 return False
+        #
+        #         # 大于255判断
+        #         num = num * 10 + int(c)
+        #         if num > 255:
+        #             return False
+        #
+        #         i += 1
+        #
+        #     # 后置空格处理
+        #     while i < n:
+        #         if ip_segment[i] != ' ':
+        #             return False
+        #         i += 1
+        #
+        #     return True
 
-    @staticmethod
-    def check_segment(ip_segment):
-        # 前导空格判断
-        n = len(ip_segment)
-        i = 0
-        while i < n and ip_segment[i] == ' ':
-            i += 1
-        if i == n:
-            return False
-
-        # 转化为数字及条件判断
-        num = 0
-        front_is_zero, flag = False, False
-        while i < n and ip_segment[i] != ' ':
-            c = ip_segment[i]
-            # 非数字判断
-            if c < '0' or c > '9':
-                return False
-
-            # 前导0的判断
-            if flag is False:
-                flag = True
-                if c == '0':
-                    front_is_zero = True
-            else:
-                if c != '0' and front_is_zero is True:
-                    return False
-
-            # 大于255判断
-            num = num * 10 + int(c)
-            if num > 255:
-                return False
-
-            i += 1
-
-        # 后置空格处理
-        while i < n:
-            if ip_segment[i] != ' ':
-                return False
-            i += 1
-
-        return True
+        pass
 
 
 if __name__ == '__main__':
