@@ -47,30 +47,44 @@ class MyStack:
     def __init__(self):
         self.q1 = collections.deque()
         self.q2 = collections.deque()
+        self.q = collections.deque()
 
     def push(self, x: int) -> None:
-        self.q1.append(x)
+        # self.q1.append(x)
+        pass
+        n = len(self.q)
+        self.q.append(x)
+        for i in range(n):
+            self.q.append(self.q.popleft())
 
     def pop(self) -> int:
-        if not self.q1:
+        # if not self.q1:
+        #     return -1
+        # for i in range(len(self.q1) - 1):
+        #     self.q2.append(self.q1.popleft())
+        # result = self.q1.popleft()
+        # for i in range(len(self.q2)):
+        #     self.q1.append(self.q2.popleft())
+        # return result
+        pass
+        if not self.q:
             return -1
-        for i in range(len(self.q1) - 1):
-            self.q2.append(self.q1.popleft())
-        result = self.q1.popleft()
-        for i in range(len(self.q2)):
-            self.q1.append(self.q2.popleft())
-        return result
+        return self.q.popleft()
 
     def top(self) -> int:
-        if not self.q1:
+        # if not self.q1:
+        #     return -1
+        # for i in range(len(self.q1) - 1):
+        #     self.q2.append(self.q1.popleft())
+        # result = self.q1.popleft()
+        # for i in range(len(self.q2)):
+        #     self.q1.append(self.q2.popleft())
+        # self.q1.append(result)
+        # return result
+        pass
+        if not self.q:
             return -1
-        for i in range(len(self.q1) - 1):
-            self.q2.append(self.q1.popleft())
-        result = self.q1.popleft()
-        for i in range(len(self.q2)):
-            self.q1.append(self.q2.popleft())
-        self.q1.append(result)
-        return result
+        return self.q[0]
 
     def empty(self) -> bool:
         return len(self.q1) == 0
@@ -79,9 +93,11 @@ class MyStack:
 if __name__ == '__main__':
     s = MyStack()
     print(s.top())
-    print(s.push(1))
+    print(s.pop())
     print(s.push(1))
     print(s.push(2))
+    print(s.push(3))
+    print(s.push(4))
     print(s.top())  # 返回 2
     print(s.pop())  # 返回 2
     print(s.empty())  # 返回 False
