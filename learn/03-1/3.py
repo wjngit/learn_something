@@ -45,14 +45,49 @@ class SortedStack:
 
         pass
 
+        self.stack.append(val)
+
     def pop(self) -> None:
-        if self.stack:
-            return self.stack.pop()
+        # if self.stack:
+        #     return self.stack.pop()
+
+        pass
+
+        if not self.stack:
+            return
+        min_val = float('inf')
+        while self.stack:
+            val = self.stack.pop()
+            if val < min_val:
+                min_val = val
+            self.temp.append(val)
+        removed = False
+        while self.temp:
+            val = self.temp.pop()
+            if val != min_val or (val == min_val and removed is True):
+                self.stack.append(val)
+            else:
+                removed = True
 
     def peek(self) -> int:
-        if self.stack:
-            return self.stack[-1]
-        return -1
+        # if self.stack:
+        #     return self.stack[-1]
+        # return -1
+
+        pass
+
+        if not self.stack:
+            return -1
+        min_val = float('inf')
+        while self.stack:
+            val = self.stack.pop()
+            if val < min_val:
+                min_val = val
+            self.temp.append(val)
+        while self.temp:
+            val = self.temp.pop()
+            self.stack.append(val)
+        return min_val
 
     def isEmpty(self) -> bool:
         return not self.stack
