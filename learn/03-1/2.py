@@ -40,20 +40,37 @@
 # param_3 = obj.top()
 # param_4 = obj.empty()
 
+import collections
+
 
 class MyStack:
-
     def __init__(self):
-        self.q1 = []
+        self.q1 = collections.deque()
+        self.q2 = collections.deque()
 
     def push(self, x: int) -> None:
         self.q1.append(x)
 
     def pop(self) -> int:
-        return self.q1.pop()
+        if not self.q1:
+            return -1
+        for i in range(len(self.q1) - 1):
+            self.q2.append(self.q1.popleft())
+        result = self.q1.popleft()
+        for i in range(len(self.q2)):
+            self.q1.append(self.q2.popleft())
+        return result
 
     def top(self) -> int:
-        return self.q1[len(self.q1) - 1]
+        if not self.q1:
+            return -1
+        for i in range(len(self.q1) - 1):
+            self.q2.append(self.q1.popleft())
+        result = self.q1.popleft()
+        for i in range(len(self.q2)):
+            self.q1.append(self.q2.popleft())
+        self.q1.append(result)
+        return result
 
     def empty(self) -> bool:
         return len(self.q1) == 0
@@ -61,6 +78,8 @@ class MyStack:
 
 if __name__ == '__main__':
     s = MyStack()
+    print(s.top())
+    print(s.push(1))
     print(s.push(1))
     print(s.push(2))
     print(s.top())  # 返回 2
