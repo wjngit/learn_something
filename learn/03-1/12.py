@@ -61,6 +61,33 @@ class Solution:
 
         pass
 
+        n = len(height)
+        result = 0
+        stack = []
+        for i in range(n):
+            if not stack:
+                stack.append(i)
+                continue
+            while stack:
+                top = stack[-1]
+                if height[top] == height[i]:
+                    stack.pop()
+                    stack.append(i)
+                    break
+                elif height[top] > height[i]:
+                    stack.append(i)
+                    break
+                else:
+                    mid = stack.pop()
+                    if not stack:
+                        stack.append(i)
+                        break
+                    left = stack[-1]
+                    h = min(height[left], height[i]) - height[mid]
+                    w = i - left - 1
+                    result += h * w
+        return result
+
 
 if __name__ == '__main__':
     height1 = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
