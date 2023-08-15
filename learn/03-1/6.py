@@ -50,6 +50,18 @@ class Solution:
 
         pass
 
+        temp = {')': '(', ']': '[', '}': '{'}
+        stack = []
+        for c in s:
+            if not stack or c not in temp:
+                stack.append(c)
+            else:
+                if stack[-1] == temp[c]:
+                    stack.pop()
+                else:
+                    stack.append(c)
+        return not stack
+
 
 if __name__ == '__main__':
     s1 = "()"
